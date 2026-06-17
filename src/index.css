@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue-50: #f0f7ff;
+  --color-brand-blue-100: #e0effe;
+  --color-brand-blue-200: #bae2fd;
+  --color-brand-blue-300: #7dd0fc;
+  --color-brand-blue-400: #38bdf8;
+  --color-brand-blue-500: #0066cc;
+  --color-brand-blue-600: #0250a3;
+  --color-brand-blue-700: #034085;
+  --color-brand-blue-800: #07376b;
+  --color-brand-blue-900: #0c2e56;
+  --color-brand-blue: #0066cc;
+
+  --color-brand-orange-50: #fff7ed;
+  --color-brand-orange-100: #ffedd5;
+  --color-brand-orange-200: #fed7aa;
+  --color-brand-orange-300: #fdbb74;
+  --color-brand-orange-400: #fb923c;
+  --color-brand-orange-500: #f57c00;
+  --color-brand-orange-600: #ea580c;
+  --color-brand-orange-700: #c2410c;
+  --color-brand-orange-800: #9a3412;
+  --color-brand-orange-900: #7c2d12;
+  --color-brand-orange: #f57c00;
+
+  --color-brand-green-50: #f0fdf4;
+  --color-brand-green-100: #dcfce7;
+  --color-brand-green-200: #bbf7d0;
+  --color-brand-green-300: #86efac;
+  --color-brand-green-400: #4ade80;
+  --color-brand-green-500: #25d366;
+  --color-brand-green-600: #16a34a;
+  --color-brand-green-700: #15803d;
+  --color-brand-green-800: #166534;
+  --color-brand-green-900: #14532d;
+  --color-brand-green: #25d366;
+
+  --color-brand-dark: #0f172a;
+  --color-brand-slate: #334155;
+  --color-brand-light: #f8fafc;
+
+  --font-sans: "Outfit", "Inter", sans-serif;
+
+  --animate-fadeIn: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Custom modern scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Smooth layout and focus styling adjustments */
+html, body, #root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
