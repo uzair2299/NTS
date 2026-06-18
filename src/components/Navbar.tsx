@@ -51,10 +51,10 @@ export const Navbar: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-base font-extrabold tracking-tight text-white leading-none">
-                  EXPERTS
+                  NTS
                 </span>
                 <span className="text-[9px] font-bold tracking-widest text-brand-blue leading-none mt-0.5">
-                  TECHNICAL SERVICES
+                  NETWORK TECH SERVICES
                 </span>
               </div>
             </Link>
@@ -147,9 +147,9 @@ export const Navbar: React.FC = () => {
               <Shield className="w-4 h-4" />
             </div>
             <div>
-              <p className="font-extrabold text-white text-sm leading-none">EXPERTS</p>
+              <p className="font-extrabold text-white text-sm leading-none">NTS</p>
               <p className="text-[9px] font-bold tracking-widest text-brand-blue leading-none mt-0.5">
-                TECHNICAL SERVICES
+                NETWORK TECH SERVICES
               </p>
             </div>
           </div>

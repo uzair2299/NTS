@@ -293,7 +293,7 @@ export const Home: React.FC = () => {
               </h2>
 
               <p className="text-brand-slate text-sm leading-relaxed">
-                Experts Technical Services is powered by a team of not only professionals, however, and pioneers in our Company. We have a tendency to believe the idea that effort making in any website.
+                Network Technical Services Experts (NTS) is powered by a team of not only professionals, however, and pioneers in our Company. We have a tendency to believe the idea that effort making in any website.
               </p>
 
               {/* Checklist */}

@@ -21,7 +21,8 @@ export const Footer: React.FC = () => {
               <div className="p-2 bg-brand-blue rounded-lg text-white">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <span className="text-lg font-extrabold text-white tracking-wider">EXPERTS</span>
+              <span className="text-lg font-extrabold text-white tracking-wider">NTS</span>
+              <span className="text-[10px] font-bold tracking-widest text-brand-blue ml-1">NETWORK TECH SERVICES</span>
             </div>
             <p className="text-sm leading-relaxed text-slate-400 mb-6">
               Dubai's premium residential and commercial technical maintenance provider. First-time-right assurance for AC, plumbing, electrical, painting, and remodeling work.

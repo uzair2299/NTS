@@ -123,7 +123,7 @@ export const servicesData: ServiceDetail[] = [
 ];
 
 export const companyDetails = {
-  name: "Experts Technical Services",
+  name: "Network Technical Services Experts",
   phone: "+971 58 984 3344",
   phoneSecondary: "+971 56 195 9143",
   email: "info@expertstechnicalservices.com",

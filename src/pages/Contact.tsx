@@ -12,7 +12,7 @@ export const Contact: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <h1 className="text-3xl md:text-5xl font-extrabold">Contact & Location</h1>
           <p className="text-slate-400 mt-2 text-sm md:text-base max-w-xl mx-auto">
-            Get in touch with Experts Technical Services today. We are available 24/7 for emergency plumbing & AC repairs.
+            Get in touch with Network Technical Services Experts (NTS) today. We are available 24/7 for emergency plumbing &amp; AC repairs.
           </p>
         </div>
       </section>
@@ -90,7 +90,7 @@ export const Contact: React.FC = () => {
                   allowFullScreen={false}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Experts Technical Services Office Map"
+                  title="Network Technical Services Experts Office Map"
                 ></iframe>
               </div>
             </div>

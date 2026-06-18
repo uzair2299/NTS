@@ -24,7 +24,7 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <h1 className="text-3xl md:text-5xl font-extrabold">About Our Company</h1>
           <p className="text-slate-400 mt-2 text-sm md:text-base max-w-xl mx-auto">
-            Learn more about Experts Technical Services — your trusted engineering partner in Dubai.
+            Learn more about Network Technical Services Experts (NTS) — your trusted engineering partner in Dubai.
           </p>
         </div>
       </section>
@@ -70,7 +70,7 @@ export const About: React.FC = () => {
                 Setting New Benchmarks in the Dubai MEP & Renovation Industry
               </h3>
               <p className="text-brand-slate text-sm leading-relaxed">
-                At **Experts Technical Services**, we solve home and office repair problems with engineering-grade solutions. Rather than offering temporary patches, we diagnose root causes to provide long-term reliability.
+                At Network Technical Services Experts (NTS), we solve home and office repair problems with engineering-grade solutions. Rather than offering temporary patches, we diagnose root causes to provide long-term reliability.
               </p>
               
               <div className="space-y-4">
