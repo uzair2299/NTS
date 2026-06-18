@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Shield, CalendarDays } from 'lucide-react';
+import { Menu, X, Phone, Shield, Search } from 'lucide-react';
 import { companyDetails } from '../data/servicesData';
 
 export const Navbar: React.FC = () => {
@@ -9,17 +9,13 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close drawer on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+  useEffect(() => { setIsOpen(false); }, [location]);
 
-  // Prevent body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -36,92 +32,83 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* ── Top announcement bar (desktop only) ─────────────────────────────── */}
-      <div className="bg-brand-dark text-white text-xs py-2 px-4 border-b border-slate-800 hidden sm:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-            <span className="font-medium">24/7 Emergency AC &amp; Plumbing Support in Dubai</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href={`mailto:${companyDetails.email}`} className="hover:text-brand-orange transition-colors">
-              {companyDetails.email}
-            </a>
-            <span className="text-slate-600">|</span>
-            <span>Office Hours: 8:00 AM – 7:00 PM</span>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Sticky header ───────────────────────────────────────────────────────
-           IMPORTANT: z-index set via inline style so Tailwind's sticky class
-           doesn't create a stacking context that traps the mobile drawer.
-          ─────────────────────────────────────────────────────────────────────── */}
+      {/* ── Main Navbar — dark background ─────────────────────────────── */}
       <header
         style={{ position: 'sticky', top: 0, zIndex: 40 }}
         className={`w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-md py-3'
-            : 'bg-white/80 backdrop-blur-sm shadow-sm py-4'
+            ? 'bg-brand-dark/98 backdrop-blur-md shadow-xl shadow-black/40 py-3'
+            : 'bg-brand-dark py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-6">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2.5 group">
+            <Link to="/" className="flex items-center gap-2.5 group shrink-0">
               <div className="p-2 bg-brand-blue rounded-xl text-white shadow-md group-hover:bg-brand-orange transition-colors duration-300">
-                <Shield className="w-6 h-6" />
+                <Shield className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-extrabold tracking-tight text-brand-dark leading-none">
+                <span className="text-base font-extrabold tracking-tight text-white leading-none">
                   EXPERTS
                 </span>
-                <span className="text-[10px] md:text-xs font-bold tracking-widest text-brand-orange leading-none mt-1">
+                <span className="text-[9px] font-bold tracking-widest text-brand-blue leading-none mt-0.5">
                   TECHNICAL SERVICES
                 </span>
               </div>
             </Link>
 
-            {/* Desktop nav links */}
-            <nav className="hidden md:flex items-center gap-8">
+            {/* Desktop nav — centered */}
+            <nav className="hidden md:flex items-center gap-7 flex-1 justify-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-sm font-semibold transition-colors duration-200 ${
+                  className={`text-sm font-semibold transition-all duration-200 relative group ${
                     isActive(link.path)
-                      ? 'text-brand-blue border-b-2 border-brand-blue pb-1'
-                      : 'text-brand-slate hover:text-brand-blue'
+                      ? 'text-brand-blue'
+                      : 'text-slate-300 hover:text-white'
                   }`}
                 >
                   {link.name}
+                  {/* animated underline */}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-blue transition-all duration-300 ${
+                    isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
                 </Link>
               ))}
             </nav>
 
-            {/* Desktop CTA buttons */}
-            <div className="hidden md:flex items-center gap-4">
+            {/* Right controls */}
+            <div className="hidden md:flex items-center gap-3 shrink-0">
+              {/* Search icon */}
+              <button className="p-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5" aria-label="Search">
+                <Search className="w-5 h-5" />
+              </button>
+
+              {/* Emergency red button */}
               <a
                 href={`tel:${companyDetails.phone.replace(/\s+/g, '')}`}
-                className="flex items-center gap-2 px-4 py-2 bg-brand-blue/5 hover:bg-brand-blue/10 text-brand-blue rounded-xl font-bold text-sm transition-colors border border-brand-blue/10"
+                className="flex items-center gap-2 px-4 py-2.5 bg-brand-blue hover:bg-brand-orange text-white rounded-xl font-bold text-sm transition-all shadow-md shadow-brand-blue/25 hover:-translate-y-0.5"
               >
-                <Phone className="w-4 h-4 text-brand-orange animate-pulse" />
-                <span>Call Now: {companyDetails.phone}</span>
+                <Phone className="w-4 h-4 animate-pulse" />
+                <span className="hidden lg:inline">Emergency</span>
               </a>
+
+              {/* Get Quote outline button */}
               <Link
                 to="/contact"
-                className="flex items-center gap-1.5 px-5 py-2.5 bg-brand-orange hover:bg-brand-orange-600 text-white rounded-xl font-bold text-sm shadow-md transition-all hover:-translate-y-0.5"
+                className="px-4 py-2.5 border border-white/20 hover:border-brand-blue text-slate-300 hover:text-white rounded-xl font-bold text-sm transition-all hover:bg-white/5"
               >
-                <CalendarDays className="w-4 h-4" />
-                <span>Get a Quote</span>
+                Get Quote
               </Link>
             </div>
 
-            {/* Mobile hamburger button */}
+            {/* Hamburger – mobile */}
             <button
               onClick={() => setIsOpen(true)}
-              className="md:hidden p-2 rounded-lg text-brand-dark hover:bg-slate-100 transition-colors"
+              className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
               aria-label="Open navigation menu"
             >
               <Menu className="w-6 h-6" />
@@ -131,49 +118,44 @@ export const Navbar: React.FC = () => {
         </div>
       </header>
 
-      {/* ══════════════════════════════════════════════════════════════════════
-           MOBILE DRAWER — rendered as a SIBLING to <header>, NOT a child.
-           This means it is NOT inside the sticky header's stacking context,
-           so it can freely cover the full viewport with z-index 9999.
-          ══════════════════════════════════════════════════════════════════════ */}
-
-      {/* Semi-transparent backdrop — fades in/out */}
+      {/* ── MOBILE DRAWER ─────────────────────────────────────────────────── */}
+      {/* Backdrop */}
       <div
         onClick={() => setIsOpen(false)}
         aria-hidden="true"
         style={{ zIndex: 9998 }}
-        className={`fixed inset-0 bg-black/60 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/70 md:hidden transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       />
 
-      {/* Drawer panel — slides in from right */}
+      {/* Drawer */}
       <div
         role="dialog"
         aria-modal="true"
         aria-label="Site navigation"
         style={{ zIndex: 9999 }}
-        className={`fixed top-0 right-0 h-full w-80 max-w-[88vw] bg-white shadow-2xl
-          flex flex-col md:hidden transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-80 max-w-[88vw] bg-brand-dark shadow-2xl
+          flex flex-col md:hidden transition-transform duration-300 ease-in-out border-l border-white/10 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        {/* Drawer header row */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 shrink-0">
+        {/* Header row */}
+        <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 shrink-0">
           <div className="flex items-center gap-2">
             <div className="p-1.5 bg-brand-blue rounded-lg text-white shrink-0">
               <Shield className="w-4 h-4" />
             </div>
             <div>
-              <p className="font-extrabold text-brand-dark text-sm leading-none">EXPERTS</p>
-              <p className="text-[9px] font-bold tracking-widest text-brand-orange leading-none mt-0.5">
+              <p className="font-extrabold text-white text-sm leading-none">EXPERTS</p>
+              <p className="text-[9px] font-bold tracking-widest text-brand-blue leading-none mt-0.5">
                 TECHNICAL SERVICES
               </p>
             </div>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="p-2 rounded-lg text-brand-dark hover:bg-slate-100 transition-colors"
+            className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
             aria-label="Close menu"
           >
             <X className="w-5 h-5" />
@@ -186,25 +168,22 @@ export const Navbar: React.FC = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-base font-bold transition-all ${
+              className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-bold transition-all ${
                 isActive(link.path)
-                  ? 'text-brand-blue bg-brand-blue/5'
-                  : 'text-brand-slate hover:text-brand-blue hover:bg-slate-50'
+                  ? 'text-white bg-brand-blue'
+                  : 'text-slate-300 hover:text-white hover:bg-white/10'
               }`}
             >
-              {isActive(link.path) && (
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0" />
-              )}
               {link.name}
             </Link>
           ))}
         </nav>
 
-        {/* Bottom CTA buttons */}
-        <div className="px-5 py-5 border-t border-slate-100 bg-slate-50 shrink-0 flex flex-col gap-3">
+        {/* CTAs */}
+        <div className="px-5 py-5 border-t border-white/10 bg-black/20 shrink-0 flex flex-col gap-3">
           <a
             href={`tel:${companyDetails.phone.replace(/\s+/g, '')}`}
-            className="w-full flex items-center justify-center gap-2 py-3.5 bg-brand-blue hover:bg-brand-blue-700 text-white rounded-xl font-bold text-sm shadow-md transition-colors"
+            className="w-full flex items-center justify-center gap-2 py-3.5 bg-brand-blue hover:bg-brand-orange text-white rounded-xl font-bold text-sm shadow-md transition-colors"
           >
             <Phone className="w-4 h-4 animate-pulse" />
             <span>Call: {companyDetails.phone}</span>
