@@ -346,38 +346,105 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           WE DELIVERED BEST RESULTS — dark strip with service icons
+           OUR SERVICES — Modern bento-grid layout
           ══════════════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-brand-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:3rem_3rem]" />
-        <div className="absolute top-0 left-0 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl" />
+      <section className="py-24 bg-brand-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-brand-blue mb-3">
-              <div className="w-6 h-0.5 bg-brand-blue" />
-              <span className="text-xs font-bold uppercase tracking-widest">Our Services</span>
-              <div className="w-6 h-0.5 bg-brand-blue" />
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+            <div>
+              <div className="flex items-center gap-2 text-brand-blue mb-3">
+                <div className="w-6 h-0.5 bg-brand-blue" />
+                <span className="text-xs font-bold uppercase tracking-widest">Our Services</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark leading-tight">
+                Expert Solutions for <br className="hidden md:block" />
+                <span className="text-brand-blue">Every Property Need</span>
+              </h2>
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold">We Delivered Best<br />Results Services</h2>
-            <p className="text-slate-400 mt-3 text-sm max-w-lg mx-auto">
-              Expert technical services across all areas of home and office maintenance in Dubai.
-            </p>
+            <Link
+              to="/services"
+              className="flex items-center gap-2 px-6 py-3 bg-brand-dark hover:bg-brand-blue text-white rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5 shadow-md shrink-0 self-start md:self-auto"
+            >
+              All Services <ChevronRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {servicesData.map(service => {
+          {/* Bento Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-[220px] gap-4">
+            {servicesData.map((service, idx) => {
               const LucideIcon = (LucideIcons as any)[service.iconName] || LucideIcons.Wrench;
+              // First card spans 2 cols + 2 rows (featured)
+              const isFeatured = idx === 0;
               return (
                 <Link
                   key={service.slug}
                   to={`/services#${service.slug}`}
-                  className="group flex flex-col items-center gap-3 p-5 rounded-2xl border border-white/10 hover:border-brand-blue/50 hover:bg-brand-blue/10 transition-all text-center"
+                  className={`group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ${
+                    isFeatured ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
+                  }`}
                 >
-                  <div className="p-3 bg-brand-blue/20 group-hover:bg-brand-blue rounded-xl transition-colors">
-                    <LucideIcon className="w-6 h-6 text-brand-blue group-hover:text-white transition-colors" />
+                  {/* Background image */}
+                  <img
+                    src={service.imageUrl}
+                    alt={service.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+
+                  {/* Gradient overlay — always present */}
+                  <div className={`absolute inset-0 transition-opacity duration-300 ${
+                    isFeatured
+                      ? 'bg-gradient-to-t from-black/90 via-black/40 to-black/10'
+                      : 'bg-gradient-to-t from-black/85 via-black/30 to-transparent'
+                  }`} />
+
+                  {/* Red left accent on featured */}
+                  {isFeatured && <div className="absolute top-0 left-0 w-1 h-full bg-brand-blue" />}
+
+                  {/* Pricing badge */}
+                  <div className="absolute top-4 right-4 bg-brand-blue/90 backdrop-blur-sm text-white text-[10px] font-extrabold px-2.5 py-1 rounded-lg uppercase tracking-wide">
+                    {service.pricing}
                   </div>
-                  <span className="text-xs font-bold text-white/80 group-hover:text-white transition-colors leading-tight">{service.title}</span>
+
+                  {/* Content */}
+                  <div className={`absolute inset-0 flex flex-col justify-end p-5 ${isFeatured ? 'p-7' : 'p-4'}`}>
+
+                    {/* Icon */}
+                    <div className={`mb-3 ${isFeatured ? 'mb-4' : 'mb-2'}`}>
+                      <div className={`inline-flex p-2.5 bg-brand-blue rounded-xl text-white shadow-lg ${isFeatured ? 'p-3' : ''}`}>
+                        <LucideIcon className={isFeatured ? 'w-6 h-6' : 'w-4 h-4'} />
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className={`font-extrabold text-white leading-tight mb-1 ${isFeatured ? 'text-2xl mb-2' : 'text-sm'}`}>
+                      {service.title}
+                    </h3>
+
+                    {/* Description — featured only always visible, others show on hover */}
+                    {isFeatured ? (
+                      <p className="text-slate-300 text-sm leading-relaxed mb-4 max-w-sm">
+                        {service.shortDescription}
+                      </p>
+                    ) : (
+                      <p className="text-slate-300 text-xs leading-relaxed mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
+                        {service.shortDescription}
+                      </p>
+                    )}
+
+                    {/* CTA */}
+                    <div className={`flex items-center gap-2 transition-all duration-300 ${
+                      isFeatured ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'
+                    }`}>
+                      <span className={`inline-flex items-center gap-1.5 bg-brand-blue hover:bg-brand-orange text-white font-bold rounded-lg transition-colors ${
+                        isFeatured ? 'px-5 py-2.5 text-sm' : 'px-3.5 py-2 text-xs'
+                      }`}>
+                        Book Now <ChevronRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </div>
                 </Link>
               );
             })}
