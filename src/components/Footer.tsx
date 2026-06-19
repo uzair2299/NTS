@@ -1,6 +1,7 @@
 import React from 'react';
+import ntsLogo from '../assets/nts_logo.jpeg';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone, ShieldCheck, Clock, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock, Send } from 'lucide-react';
 import { companyDetails, servicesData } from '../data/servicesData';
 
 export const Footer: React.FC = () => {
@@ -17,12 +18,12 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Company Bio */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="p-2 bg-brand-blue rounded-lg text-white">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <span className="text-lg font-extrabold text-white tracking-wider">NTS</span>
-              <span className="text-[10px] font-bold tracking-widest text-brand-blue ml-1">NETWORK TECH SERVICES</span>
+            <div className="mb-4">
+              <img
+                src={ntsLogo}
+                alt="NTS — Network Technical Services Experts"
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-sm leading-relaxed text-slate-400 mb-6">
               Dubai's premium residential and commercial technical maintenance provider. First-time-right assurance for AC, plumbing, electrical, painting, and remodeling work.

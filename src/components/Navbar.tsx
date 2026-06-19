@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import ntsLogo from '../assets/nts_logo.jpeg';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Shield, Search } from 'lucide-react';
+import { Menu, X, Phone, Search } from 'lucide-react';
 import { companyDetails } from '../data/servicesData';
 
 export const Navbar: React.FC = () => {
@@ -45,18 +46,12 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center justify-between gap-6">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2.5 group shrink-0">
-              <div className="p-2 bg-brand-blue rounded-xl text-white shadow-md group-hover:bg-brand-orange transition-colors duration-300">
-                <Shield className="w-5 h-5" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-base font-extrabold tracking-tight text-white leading-none">
-                  NTS
-                </span>
-                <span className="text-[9px] font-bold tracking-widest text-brand-blue leading-none mt-0.5">
-                  NETWORK TECH SERVICES
-                </span>
-              </div>
+            <Link to="/" className="flex items-center shrink-0 group">
+              <img
+                src={ntsLogo}
+                alt="NTS — Network Technical Services Experts"
+                className="h-10 w-auto object-contain group-hover:opacity-90 transition-opacity duration-300"
+              />
             </Link>
 
             {/* Desktop nav — centered */}
@@ -142,17 +137,13 @@ export const Navbar: React.FC = () => {
       >
         {/* Header row */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 shrink-0">
-          <div className="flex items-center gap-2">
-            <div className="p-1.5 bg-brand-blue rounded-lg text-white shrink-0">
-              <Shield className="w-4 h-4" />
-            </div>
-            <div>
-              <p className="font-extrabold text-white text-sm leading-none">NTS</p>
-              <p className="text-[9px] font-bold tracking-widest text-brand-blue leading-none mt-0.5">
-                NETWORK TECH SERVICES
-              </p>
-            </div>
-          </div>
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            <img
+              src={ntsLogo}
+              alt="NTS — Network Technical Services Experts"
+              className="h-9 w-auto object-contain"
+            />
+          </Link>
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
