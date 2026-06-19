@@ -1,30 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue-50: #f0f7ff;
-  --color-brand-blue-100: #e0effe;
-  --color-brand-blue-200: #bae2fd;
-  --color-brand-blue-300: #7dd0fc;
-  --color-brand-blue-400: #38bdf8;
-  --color-brand-blue-500: #0066cc;
-  --color-brand-blue-600: #0250a3;
-  --color-brand-blue-700: #034085;
-  --color-brand-blue-800: #07376b;
-  --color-brand-blue-900: #0c2e56;
-  --color-brand-blue: #0066cc;
+  /* ── Primary brand color: RED (replaces blue) ─────────────────────── */
+  --color-brand-blue-50: #fff1f2;
+  --color-brand-blue-100: #ffe4e6;
+  --color-brand-blue-200: #fecdd3;
+  --color-brand-blue-300: #fda4af;
+  --color-brand-blue-400: #fb7185;
+  --color-brand-blue-500: #ef4444;
+  --color-brand-blue-600: #dc2626;
+  --color-brand-blue-700: #b91c1c;
+  --color-brand-blue-800: #991b1b;
+  --color-brand-blue-900: #7f1d1d;
+  --color-brand-blue: #dc2626;
 
-  --color-brand-orange-50: #fff7ed;
-  --color-brand-orange-100: #ffedd5;
-  --color-brand-orange-200: #fed7aa;
-  --color-brand-orange-300: #fdbb74;
-  --color-brand-orange-400: #fb923c;
-  --color-brand-orange-500: #f57c00;
-  --color-brand-orange-600: #ea580c;
-  --color-brand-orange-700: #c2410c;
-  --color-brand-orange-800: #9a3412;
-  --color-brand-orange-900: #7c2d12;
-  --color-brand-orange: #f57c00;
+  /* ── Secondary accent: Deep Crimson (replaces orange) ─────────────── */
+  --color-brand-orange-50: #fdf2f2;
+  --color-brand-orange-100: #f9d9d9;
+  --color-brand-orange-200: #f1a7a7;
+  --color-brand-orange-300: #e97575;
+  --color-brand-orange-400: #df4444;
+  --color-brand-orange-500: #cc0000;
+  --color-brand-orange-600: #aa0000;
+  --color-brand-orange-700: #880000;
+  --color-brand-orange-800: #660000;
+  --color-brand-orange-900: #440000;
+  --color-brand-orange: #cc0000;
 
+  /* ── WhatsApp green — kept as-is ─────────────────────────────────── */
   --color-brand-green-50: #f0fdf4;
   --color-brand-green-100: #dcfce7;
   --color-brand-green-200: #bbf7d0;
@@ -37,9 +40,10 @@
   --color-brand-green-900: #14532d;
   --color-brand-green: #25d366;
 
-  --color-brand-dark: #0f172a;
-  --color-brand-slate: #334155;
-  --color-brand-light: #f8fafc;
+  /* ── Neutrals: near-black background, dark slate text ────────────── */
+  --color-brand-dark: #0a0a0a;
+  --color-brand-slate: #374151;
+  --color-brand-light: #f9fafb;
 
   --font-sans: "Outfit", "Inter", sans-serif;
 
@@ -57,23 +61,23 @@
   }
 }
 
-/* Custom modern scrollbar styles */
+/* Custom scrollbar — now red-accented */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #f9fafb;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #dc2626;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #b91c1c;
 }
 
 /* Smooth layout and focus styling adjustments */

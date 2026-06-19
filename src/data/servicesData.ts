@@ -2,6 +2,7 @@ export interface ServiceDetail {
   title: string;
   iconName: string;
   slug: string;
+  imageUrl: string;
   shortDescription: string;
   longDescription: string;
   bulletPoints: string[];
@@ -9,11 +10,13 @@ export interface ServiceDetail {
   highlights: string[];
 }
 
+
 export const servicesData: ServiceDetail[] = [
   {
     title: "AC Repair & Maintenance",
     iconName: "Wind",
     slug: "ac-repair-maintenance",
+    imageUrl: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80",
     shortDescription: "Professional AC repair, deep coil cleaning, filter replacement, gas topping up, and installation for residential and commercial units across Dubai.",
     longDescription: "We provide top-notch air conditioning maintenance services in Dubai. Our certified team ensures your AC unit functions efficiently, reducing electricity bills and ensuring healthy air quality. From emergency cooling failures to annual contract servicing, we do it all.",
     bulletPoints: [
@@ -31,6 +34,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Plumbing Services",
     iconName: "Droplets",
     slug: "plumbing-services",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
     shortDescription: "Expert leakage repair, water heater replacement, blockage removal, and pipe installations.",
     longDescription: "Our professional plumbers in Dubai handle everything from minor household leaks to complete pipeline overhauls. We use advanced diagnostic leak-detection tools to resolve your plumbing issues instantly without damage to your structure.",
     bulletPoints: [
@@ -48,6 +52,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Painting Services",
     iconName: "Paintbrush",
     slug: "painting-services",
+    imageUrl: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80",
     shortDescription: "Premium interior and exterior wall painting for apartments, villas, and office spaces.",
     longDescription: "Transform your space with our premium painting services in Dubai. We cover interior, exterior, wallpaper installation, wall prep, and plastering to give your property a perfect, long-lasting finish using high-quality, eco-friendly paints.",
     bulletPoints: [
@@ -65,6 +70,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Electrical Services",
     iconName: "Zap",
     slug: "electrical-services",
+    imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80",
     shortDescription: "Secure electrical wiring, DB box upgrades, lighting installation, and short-circuit troubleshooting.",
     longDescription: "Safe and reliable electrical solutions by certified Dubai electricians. We troubleshoot complex circuitry, repair DB boards, set up elegant lighting schemes, and install new fixtures in accordance with DEWA safety standards.",
     bulletPoints: [
@@ -82,6 +88,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Remodeling & Fit-out",
     iconName: "Layout",
     slug: "remodeling-fitout",
+    imageUrl: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=800&q=80",
     shortDescription: "Full home & office renovation, bathroom remodeling, kitchen upgrades, tiling, and gypsum work.",
     longDescription: "Comprehensive interior remodeling and fit-out solutions in Dubai. From modernizing your bathroom or kitchen to custom gypsum partitions and flooring, we deliver exceptional craftsmanship tailored to your aesthetic choices.",
     bulletPoints: [
@@ -99,6 +106,7 @@ export const servicesData: ServiceDetail[] = [
     title: "General Maintenance & Handyman",
     iconName: "Wrench",
     slug: "general-maintenance-handyman",
+    imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
     shortDescription: "Quick repairs, TV mounting, furniture assembly, door lock repair, and picture hanging.",
     longDescription: "Professional handyman services in Dubai for all those small, tricky tasks around the house. Our team comes fully equipped with the right tools to fix, mount, or install anything quickly and cleanly.",
     bulletPoints: [
@@ -115,7 +123,7 @@ export const servicesData: ServiceDetail[] = [
 ];
 
 export const companyDetails = {
-  name: "Experts Technical Services",
+  name: "Network Technical Services Experts",
   phone: "+971 58 984 3344",
   phoneSecondary: "+971 56 195 9143",
   email: "info@expertstechnicalservices.com",
