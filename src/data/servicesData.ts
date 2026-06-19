@@ -124,10 +124,10 @@ export const servicesData: ServiceDetail[] = [
 
 export const companyDetails = {
   name: "Network Technical Services Experts",
-  phone: "+971 58 984 3344",
-  phoneSecondary: "+971 56 195 9143",
-  email: "info@expertstechnicalservices.com",
+  phone: "+971 55 512 0513",
+  phoneSecondary: "+971 55 512 0513",
+  email: "nts.experts@gmail.com",
   address: "Barsha Valley Building, Al Barsha 1, Dubai, UAE",
   workingHours: "24/7 Emergency Service (Office: 8:00 AM - 7:00 PM)",
-  whatsapp: "https://wa.me/971589843344"
+  whatsapp: "https://wa.me/971555120513"
 };
