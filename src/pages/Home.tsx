@@ -386,40 +386,178 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           BEFORE / AFTER GALLERY
+           BEFORE / AFTER GALLERY — Modern dark layout
           ══════════════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-brand-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-brand-blue mb-3">
-              <div className="w-6 h-0.5 bg-brand-blue" />
-              <span className="text-xs font-bold uppercase tracking-widest">Our Transformations</span>
-              <div className="w-6 h-0.5 bg-brand-blue" />
+      <section className="py-24 bg-brand-dark relative overflow-hidden">
+        {/* Grid overlay */}
+        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:3rem_3rem]" />
+        {/* Glow blobs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Section header */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+            <div>
+              <div className="flex items-center gap-2 text-brand-blue mb-3">
+                <div className="w-6 h-0.5 bg-brand-blue" />
+                <span className="text-xs font-bold uppercase tracking-widest">Our Transformations</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+                Real Results. <span className="text-brand-blue">Real Spaces.</span>
+              </h2>
+              <p className="text-slate-400 mt-3 text-sm max-w-md leading-relaxed">
+                Drag the slider to compare our before &amp; after project results. Every transformation is backed by our quality guarantee.
+              </p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark">Before &amp; After Project Gallery</h2>
-            <p className="text-brand-slate mt-3 text-sm max-w-xl mx-auto">
-              Slide to compare real painting, carpentry, and renovation jobs. See the quality difference expert techniques make.
-            </p>
+
+            {/* Stats row */}
+            <div className="flex gap-6 shrink-0">
+              {[
+                { value: '4,938+', label: 'Projects Done' },
+                { value: '100%', label: 'Satisfaction' },
+                { value: '1-Year', label: 'Warranty' },
+              ].map((s, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-2xl font-extrabold text-brand-blue">{s.value}</div>
+                  <div className="text-[11px] text-slate-400 font-medium mt-0.5">{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="space-y-3">
-              <h4 className="text-base font-bold text-brand-dark">Villa Living Room Painting &amp; Wall Restoration</h4>
-              <BeforeAfterSlider
-                beforeImage="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80"
-                afterImage="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
-                beforeLabel="Before Painting"
-                afterLabel="After Painting"
-              />
+
+          {/* Project cards grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            {/* Card 1 — Painting */}
+            <div className="group bg-white/5 border border-white/10 hover:border-brand-blue/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1">
+              {/* Meta bar */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">Painting</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] text-slate-400 font-medium">Al Barsha Villa</span>
+                  <span className="bg-brand-blue/20 text-brand-blue text-[10px] font-bold px-2 py-0.5 rounded-md">5★ Rating</span>
+                </div>
+              </div>
+
+              {/* Slider */}
+              <div className="p-1">
+                <BeforeAfterSlider
+                  beforeImage="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80"
+                  afterImage="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+                  beforeLabel="Before"
+                  afterLabel="After"
+                />
+              </div>
+
+              {/* Project details */}
+              <div className="px-5 py-4 space-y-3">
+                <h4 className="text-sm font-bold text-white">Villa Living Room Painting &amp; Wall Restoration</h4>
+                <div className="flex flex-wrap gap-2">
+                  {['Interior Painting', 'Crack Filling', 'Eco-Paint'].map((tag, i) => (
+                    <span key={i} className="text-[10px] font-semibold text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-lg">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-1 text-[11px] text-slate-500">
+                  <span>⏱ Completed in 2 days</span>
+                  <span className="text-brand-blue font-bold">From 999 AED</span>
+                </div>
+              </div>
             </div>
-            <div className="space-y-3">
-              <h4 className="text-base font-bold text-brand-dark">Modern Bathroom Remodeling &amp; Tiling</h4>
-              <BeforeAfterSlider
-                beforeImage="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=800&q=80"
-                afterImage="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80"
-                beforeLabel="Outdated Tile Work"
-                afterLabel="Premium Marble Finish"
-              />
+
+            {/* Card 2 — Bathroom */}
+            <div className="group bg-white/5 border border-white/10 hover:border-brand-blue/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-brand-orange animate-pulse" />
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">Remodeling</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] text-slate-400 font-medium">Dubai Marina Apt</span>
+                  <span className="bg-brand-blue/20 text-brand-blue text-[10px] font-bold px-2 py-0.5 rounded-md">5★ Rating</span>
+                </div>
+              </div>
+
+              <div className="p-1">
+                <BeforeAfterSlider
+                  beforeImage="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=800&q=80"
+                  afterImage="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80"
+                  beforeLabel="Before"
+                  afterLabel="After"
+                />
+              </div>
+
+              <div className="px-5 py-4 space-y-3">
+                <h4 className="text-sm font-bold text-white">Modern Bathroom Remodeling &amp; Marble Tiling</h4>
+                <div className="flex flex-wrap gap-2">
+                  {['Full Remodel', 'Marble Tiles', 'Sanitary Ware'].map((tag, i) => (
+                    <span key={i} className="text-[10px] font-semibold text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-lg">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-1 text-[11px] text-slate-500">
+                  <span>⏱ Completed in 5 days</span>
+                  <span className="text-brand-blue font-bold">Free Survey</span>
+                </div>
+              </div>
             </div>
+
+            {/* Card 3 — Kitchen */}
+            <div className="group bg-white/5 border border-white/10 hover:border-brand-blue/40 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1">
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">Kitchen</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] text-slate-400 font-medium">JBR Apartment</span>
+                  <span className="bg-brand-blue/20 text-brand-blue text-[10px] font-bold px-2 py-0.5 rounded-md">5★ Rating</span>
+                </div>
+              </div>
+
+              <div className="p-1">
+                <BeforeAfterSlider
+                  beforeImage="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80"
+                  afterImage="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=800&q=80"
+                  beforeLabel="Before"
+                  afterLabel="After"
+                />
+              </div>
+
+              <div className="px-5 py-4 space-y-3">
+                <h4 className="text-sm font-bold text-white">Kitchen Cabinet Remodel &amp; Countertop Upgrade</h4>
+                <div className="flex flex-wrap gap-2">
+                  {['Carpentry', 'Countertop', 'Backsplash'].map((tag, i) => (
+                    <span key={i} className="text-[10px] font-semibold text-slate-400 bg-white/5 border border-white/10 px-2.5 py-1 rounded-lg">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-1 text-[11px] text-slate-500">
+                  <span>⏱ Completed in 3 days</span>
+                  <span className="text-brand-blue font-bold">From 2,500 AED</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom CTA row */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10">
+            <p className="text-slate-400 text-sm">Want to see your space transformed? Get a free site inspection today.</p>
+            <Link
+              to="/contact"
+              className="flex items-center gap-2 px-8 py-3.5 bg-brand-blue hover:bg-brand-blue-700 text-white rounded-xl font-bold text-sm shadow-md shadow-brand-blue/20 transition-all hover:-translate-y-0.5 shrink-0"
+            >
+              Book Free Inspection <ChevronRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>
