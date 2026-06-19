@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { servicesData, companyDetails } from '../data/servicesData';
-import { ServiceCard } from '../components/ServiceCard';
+import { ServiceShowcase } from '../components/ServiceShowcase';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
 
 export const Home: React.FC = () => {
@@ -197,39 +197,10 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           OUR LATEST SERVICES — image-first card grid
+           OUR SERVICES — Tabbed interactive showcase
           ══════════════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-brand-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section label */}
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-brand-blue mb-3">
-              <div className="w-6 h-0.5 bg-brand-blue" />
-              <span className="text-xs font-bold uppercase tracking-widest">Our Products</span>
-              <div className="w-6 h-0.5 bg-brand-blue" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark">Our Latest Product</h2>
-            <p className="text-brand-slate mt-3 text-sm max-w-xl mx-auto leading-relaxed">
-              We specialize in high-quality residential, commercial, and retail maintenance services across Al Barsha and Dubai.
-            </p>
-          </div>
+      <ServiceShowcase />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {servicesData.map(service => (
-              <ServiceCard key={service.slug} service={service} />
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-brand-blue hover:bg-brand-blue-700 text-white rounded-xl font-bold text-sm shadow-md shadow-brand-blue/20 transition-all hover:-translate-y-0.5"
-            >
-              Explore All Services <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* ══════════════════════════════════════════════════════════════
            WHO WE ARE — split image left / text right
