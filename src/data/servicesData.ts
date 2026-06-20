@@ -1,5 +1,4 @@
 import paintWorksImg from '../assets/paint_works.jpeg';
-import acServicesImg from '../assets/ac_services.jpeg';
 
 export interface ServiceDetail {
   title: string;
