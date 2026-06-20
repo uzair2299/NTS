@@ -66,9 +66,6 @@ export const Home: React.FC = () => {
 
             {/* ── Left: Text content ── */}
             <div className="space-y-7">
-              {/* Logo image */}
-
-
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
                 Professional{' '}
@@ -111,20 +108,20 @@ export const Home: React.FC = () => {
             </div>
 
             {/* ── Right: NTS Logo card ── */}
-            <div className="relative hidden lg:flex justify-center items-center">
+            <div className="relative flex justify-center items-center mt-12 lg:mt-0">
               {/* Logo card */}
               <div className="relative w-full max-w-lg flex items-center justify-center">
-                <div className="w-full h-[520px] rounded-2xl bg-white/5 border border-white/10 shadow-2xl flex items-center justify-center backdrop-blur-sm">
+                <div className="w-full h-[380px] lg:h-[520px] rounded-2xl bg-white/5 border border-white/10 shadow-2xl flex items-center justify-center backdrop-blur-sm">
                   {/* Decorative red glow behind logo */}
                   <div className="absolute inset-0 rounded-2xl overflow-hidden">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl" />
                   </div>
                   {/* Logo */}
-                  <div className="relative z-10 bg-white rounded-2xl px-10 py-8 shadow-2xl shadow-black/40">
+                  <div className="relative z-10 bg-white rounded-2xl px-8 py-6 lg:px-10 lg:py-8 shadow-2xl shadow-black/40 mx-4">
                     <img
                       src={ntsLogo}
                       alt="NTS — Network Technical Services Experts"
-                      className="w-72 h-auto object-contain"
+                      className="w-56 lg:w-72 h-auto object-contain mx-auto"
                     />
                     <p className="text-center text-xs text-slate-500 font-semibold tracking-wider uppercase mt-4">
                       Network Technical Services Experts
