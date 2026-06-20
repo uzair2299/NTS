@@ -1,4 +1,5 @@
 import paintWorksImg from '../assets/paint_works.jpeg';
+import acServicesImg from '../assets/ac_services.jpeg';
 
 export interface ServiceDetail {
   title: string;
@@ -18,7 +19,7 @@ export const servicesData: ServiceDetail[] = [
     title: "AC Repair & Maintenance",
     iconName: "Wind",
     slug: "ac-repair-maintenance",
-    imageUrl: "https://images.unsplash.com/photo-1631563019676-dade0f9f7f29?w=800&q=80",
+    imageUrl: acServicesImg,
     shortDescription: "Professional AC repair, deep coil cleaning, filter replacement, gas topping up, and installation for residential and commercial units across Dubai.",
     longDescription: "We provide top-notch air conditioning maintenance services in Dubai. Our certified team ensures your AC unit functions efficiently, reducing electricity bills and ensuring healthy air quality. From emergency cooling failures to annual contract servicing, we do it all.",
     bulletPoints: [
