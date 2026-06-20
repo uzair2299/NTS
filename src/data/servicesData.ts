@@ -1,5 +1,6 @@
 import paintWorksImg from '../assets/paint_works.jpeg';
 import acServicesImg from '../assets/ac_services.jpeg';
+import plumbingImg from '../assets/plumbing_services.png';
 
 export interface ServiceDetail {
   title: string;
@@ -37,7 +38,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Plumbing Services",
     iconName: "Droplets",
     slug: "plumbing-services",
-    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    imageUrl: plumbingImg,
     shortDescription: "Expert leakage repair, water heater replacement, blockage removal, and pipe installations.",
     longDescription: "Our professional plumbers in Dubai handle everything from minor household leaks to complete pipeline overhauls. We use advanced diagnostic leak-detection tools to resolve your plumbing issues instantly without damage to your structure.",
     bulletPoints: [
