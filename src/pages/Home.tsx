@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone, Calendar, ShieldCheck, Star, Wrench,
-  Clock, Award, ChevronRight, Zap, Users
+  Clock, Award, ChevronRight, Users
 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
+import ntsLogo from '../assets/nts_logo.jpeg';
 import { servicesData, companyDetails } from '../data/servicesData';
 import { ServiceCard } from '../components/ServiceCard';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
@@ -65,10 +66,13 @@ export const Home: React.FC = () => {
 
             {/* ── Left: Text content ── */}
             <div className="space-y-7">
-              {/* Label */}
-              <div className="flex items-center gap-2 text-brand-blue">
-                <Zap className="w-4 h-4 fill-current" />
-                <span className="text-xs font-bold uppercase tracking-widest">Welcome to Experts</span>
+              {/* Logo image */}
+              <div className="inline-block bg-white/95 rounded-2xl px-4 py-2 shadow-lg shadow-black/30">
+                <img
+                  src={ntsLogo}
+                  alt="NTS — Network Technical Services Experts"
+                  className="h-10 w-auto object-contain"
+                />
               </div>
 
               {/* Headline */}
