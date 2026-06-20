@@ -67,13 +67,7 @@ export const Home: React.FC = () => {
             {/* ── Left: Text content ── */}
             <div className="space-y-7">
               {/* Logo image */}
-              <div className="inline-block bg-white/95 rounded-2xl px-4 py-2 shadow-lg shadow-black/30">
-                <img
-                  src={ntsLogo}
-                  alt="NTS — Network Technical Services Experts"
-                  className="h-10 w-auto object-contain"
-                />
-              </div>
+
 
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
@@ -144,7 +138,7 @@ export const Home: React.FC = () => {
               {/* Floating stats badge */}
               <div className="absolute top-8 -right-4 bg-white text-brand-dark rounded-2xl shadow-2xl p-5 text-center min-w-[110px]">
                 <div className="text-3xl font-extrabold text-brand-blue leading-none">4938</div>
-                <div className="text-[11px] font-bold text-slate-500 mt-1 leading-tight">Happy<br/>Customers</div>
+                <div className="text-[11px] font-bold text-slate-500 mt-1 leading-tight">Happy<br />Customers</div>
               </div>
 
               {/* Experience badge bottom left */}
@@ -152,7 +146,7 @@ export const Home: React.FC = () => {
                 <Award className="w-8 h-8 shrink-0" />
                 <div>
                   <div className="text-xl font-extrabold leading-none">30+</div>
-                  <div className="text-[11px] font-semibold opacity-90 leading-tight">Years Work<br/>Experience</div>
+                  <div className="text-[11px] font-semibold opacity-90 leading-tight">Years Work<br />Experience</div>
                 </div>
               </div>
             </div>
@@ -401,9 +395,8 @@ export const Home: React.FC = () => {
                 <Link
                   key={service.slug}
                   to={`/services#${service.slug}`}
-                  className={`group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ${
-                    isFeatured ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
-                  }`}
+                  className={`group relative rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ${isFeatured ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1'
+                    }`}
                 >
                   {/* Background image */}
                   <img
@@ -414,11 +407,10 @@ export const Home: React.FC = () => {
                   />
 
                   {/* Gradient overlay — always present */}
-                  <div className={`absolute inset-0 transition-opacity duration-300 ${
-                    isFeatured
+                  <div className={`absolute inset-0 transition-opacity duration-300 ${isFeatured
                       ? 'bg-gradient-to-t from-black/90 via-black/40 to-black/10'
                       : 'bg-gradient-to-t from-black/85 via-black/30 to-transparent'
-                  }`} />
+                    }`} />
 
                   {/* Red left accent on featured */}
                   {isFeatured && <div className="absolute top-0 left-0 w-1 h-full bg-brand-blue" />}
@@ -455,12 +447,10 @@ export const Home: React.FC = () => {
                     )}
 
                     {/* CTA */}
-                    <div className={`flex items-center gap-2 transition-all duration-300 ${
-                      isFeatured ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'
-                    }`}>
-                      <span className={`inline-flex items-center gap-1.5 bg-brand-blue hover:bg-brand-orange text-white font-bold rounded-lg transition-colors ${
-                        isFeatured ? 'px-5 py-2.5 text-sm' : 'px-3.5 py-2 text-xs'
+                    <div className={`flex items-center gap-2 transition-all duration-300 ${isFeatured ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0'
                       }`}>
+                      <span className={`inline-flex items-center gap-1.5 bg-brand-blue hover:bg-brand-orange text-white font-bold rounded-lg transition-colors ${isFeatured ? 'px-5 py-2.5 text-sm' : 'px-3.5 py-2 text-xs'
+                        }`}>
                         Book Now <ChevronRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
@@ -738,7 +728,7 @@ export const Home: React.FC = () => {
               className="w-full sm:w-auto px-8 py-3.5 bg-brand-green hover:bg-green-600 text-white rounded-xl font-bold transition-all shadow-lg flex items-center justify-center gap-2"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.835-13.882c-.179-.399-.369-.407-.54-.414-.141-.005-.304-.005-.467-.005-.163 0-.427.061-.65.306-.224.244-.854.834-.854 2.031s.874 2.35 1.002 2.502c.127.153 1.705 2.593 4.14 3.64.577.248 1.028.396 1.378.508.581.185 1.109.159 1.527.097.466-.07 1.427-.584 1.63-1.147.203-.562.203-1.045.142-1.147-.061-.101-.224-.163-.467-.285-.244-.122-1.427-.704-1.65-.785-.224-.081-.387-.122-.55.122-.163.244-.63.794-.772.956-.142.163-.285.183-.528.061-.244-.122-.962-.355-1.834-1.132-.677-.602-1.133-1.347-1.266-1.572-.132-.224-.014-.346.108-.466.11-.108.244-.285.366-.427.122-.142.163-.244.244-.407.081-.163.041-.305-.02-.427-.061-.122-.54-1.3-.74-1.785z"/>
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.835-13.882c-.179-.399-.369-.407-.54-.414-.141-.005-.304-.005-.467-.005-.163 0-.427.061-.65.306-.224.244-.854.834-.854 2.031s.874 2.35 1.002 2.502c.127.153 1.705 2.593 4.14 3.64.577.248 1.028.396 1.378.508.581.185 1.109.159 1.527.097.466-.07 1.427-.584 1.63-1.147.203-.562.203-1.045.142-1.147-.061-.101-.224-.163-.467-.285-.244-.122-1.427-.704-1.65-.785-.224-.081-.387-.122-.55.122-.163.244-.63.794-.772.956-.142.163-.285.183-.528.061-.244-.122-.962-.355-1.834-1.132-.677-.602-1.133-1.347-1.266-1.572-.132-.224-.014-.346.108-.466.11-.108.244-.285.366-.427.122-.142.163-.244.244-.407.081-.163.041-.305-.02-.427-.061-.122-.54-1.3-.74-1.785z" />
               </svg>
               Quick WhatsApp Quote
             </a>
