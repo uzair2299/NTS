@@ -143,50 +143,54 @@ export const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* ── Red booking strip at bottom of hero ── */}
-        <div className="absolute bottom-0 left-0 right-0 bg-brand-blue z-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center gap-4 py-4">
+      </section>
+
+      {/* ── White booking strip — floats between hero and next section ── */}
+      <div className="relative z-20 -mt-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white rounded-2xl shadow-2xl shadow-black/20 border border-slate-100 px-6 py-5">
+            <div className="flex flex-col md:flex-row items-center gap-4">
+
               {/* Left label */}
-              <div className="text-white font-bold text-sm shrink-0">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-white/70" />
-                  <div>
-                    <div className="font-extrabold">24/7 Support for help</div>
-                    <div className="text-xs text-white/70 font-normal">Work at {companyDetails.phone}</div>
-                  </div>
+              <div className="shrink-0 flex items-center gap-3 md:pr-6 md:border-r border-slate-200">
+                <div className="p-2.5 bg-red-50 rounded-xl">
+                  <Clock className="w-5 h-5 text-brand-blue" />
+                </div>
+                <div>
+                  <div className="font-extrabold text-brand-dark text-sm leading-tight">24/7 Support</div>
+                  <div className="text-xs text-slate-400 font-medium mt-0.5">{companyDetails.phone}</div>
                 </div>
               </div>
 
               {/* Inline booking form */}
-              <div className="flex flex-col sm:flex-row flex-1 gap-2 md:pl-6 md:border-l border-white/20 w-full">
+              <div className="flex flex-col sm:flex-row flex-1 gap-2.5 w-full">
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder="Your Name"
                   value={bookingForm.name}
                   onChange={e => setBookingForm(p => ({ ...p, name: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-lg text-sm bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-brand-dark placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
                 />
                 <input
                   type="email"
-                  placeholder="Enter Email"
+                  placeholder="Email Address"
                   value={bookingForm.email}
                   onChange={e => setBookingForm(p => ({ ...p, email: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-lg text-sm bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-white/50"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-brand-dark placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
                 />
                 <select
                   value={bookingForm.service}
                   onChange={e => setBookingForm(p => ({ ...p, service: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-lg text-sm bg-white/10 border border-white/20 text-white focus:outline-none focus:border-white/50 appearance-none"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-slate-500 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all appearance-none cursor-pointer"
                 >
-                  <option value="" className="text-brand-dark">Select Service</option>
+                  <option value="">Select Service</option>
                   {servicesData.map(s => (
-                    <option key={s.slug} value={s.title} className="text-brand-dark">{s.title}</option>
+                    <option key={s.slug} value={s.title}>{s.title}</option>
                   ))}
                 </select>
                 <Link
                   to={`/contact?service=${encodeURIComponent(bookingForm.service)}`}
-                  className="px-6 py-2.5 bg-brand-dark hover:bg-slate-900 text-white font-bold text-sm rounded-lg whitespace-nowrap transition-colors shrink-0"
+                  className="px-7 py-2.5 bg-brand-blue hover:bg-red-700 text-white font-extrabold text-sm rounded-xl whitespace-nowrap transition-all shadow-md shadow-brand-blue/30 hover:-translate-y-0.5 shrink-0"
                 >
                   Book Now
                 </Link>
@@ -194,12 +198,12 @@ export const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* ══════════════════════════════════════════════════════════════
            OUR LATEST SERVICES — image-first card grid
           ══════════════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-brand-light">
+      <section className="pt-20 pb-20 bg-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section label */}
           <div className="text-center mb-14">
