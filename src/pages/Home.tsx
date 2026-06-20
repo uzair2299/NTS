@@ -679,27 +679,42 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           CONTACT CTA — dark red banner
+           CONTACT CTA — modern dark section
           ══════════════════════════════════════════════════════════════ */}
-      <section className="bg-brand-blue text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:3rem_3rem]" />
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-brand-orange/20 skew-x-[-8deg] translate-x-1/4 hidden lg:block" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-6">
-          <h2 className="text-2xl md:text-3xl font-extrabold">
-            Have a Maintenance Emergency or Planning a Renovation?
+      <section className="relative bg-slate-950 text-white py-20 overflow-hidden">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:3rem_3rem]" />
+        {/* Red glow accent — top left */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl pointer-events-none" />
+        {/* Red glow accent — bottom right */}
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-blue/15 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-brand-blue/10 border border-brand-blue/30 text-brand-blue text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
+            24/7 Emergency Support
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+            Have a Maintenance Emergency<br className="hidden sm:block" />
+            <span className="text-brand-blue"> or Planning a Renovation?</span>
           </h2>
-          <p className="text-red-100 max-w-2xl mx-auto text-sm md:text-base">
-            Contact us right now! Our rapid response team will diagnose and fix your problem.
-            Get a free site inspection and pricing estimate.
+          <p className="text-slate-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed mb-10">
+            Our rapid response team is on standby. Get a free site inspection
+            and transparent pricing estimate — no hidden charges.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            {/* Call button */}
             <a
               href={`tel:${companyDetails.phone.replace(/\s+/g, '')}`}
-              className="w-full sm:w-auto px-8 py-3.5 bg-brand-dark hover:bg-slate-900 text-white rounded-xl font-bold transition-all shadow-lg flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-900 rounded-xl font-extrabold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2.5 text-sm"
             >
-              <Phone className="w-5 h-5 animate-bounce" />
+              <Phone className="w-4 h-4 text-brand-blue" />
               Call Now: {companyDetails.phone}
             </a>
+            {/* WhatsApp button */}
             <a
               href={companyDetails.whatsapp}
               target="_blank"
