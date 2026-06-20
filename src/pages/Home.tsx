@@ -116,17 +116,29 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* ── Right: Hero image + floating badge ── */}
-            <div className="relative hidden lg:flex justify-center items-end">
-              {/* Main hero image */}
-              <div className="relative w-full max-w-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80"
-                  alt="Professional technician in red uniform"
-                  className="w-full h-[520px] object-cover rounded-2xl shadow-2xl"
-                />
-                {/* Red bar accent on image */}
-                <div className="absolute inset-0 rounded-2xl ring-2 ring-brand-blue/30" />
+            {/* ── Right: NTS Logo card ── */}
+            <div className="relative hidden lg:flex justify-center items-center">
+              {/* Logo card */}
+              <div className="relative w-full max-w-lg flex items-center justify-center">
+                <div className="w-full h-[520px] rounded-2xl bg-white/5 border border-white/10 shadow-2xl flex items-center justify-center backdrop-blur-sm">
+                  {/* Decorative red glow behind logo */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl" />
+                  </div>
+                  {/* Logo */}
+                  <div className="relative z-10 bg-white rounded-2xl px-10 py-8 shadow-2xl shadow-black/40">
+                    <img
+                      src={ntsLogo}
+                      alt="NTS — Network Technical Services Experts"
+                      className="w-72 h-auto object-contain"
+                    />
+                    <p className="text-center text-xs text-slate-500 font-semibold tracking-wider uppercase mt-4">
+                      Network Technical Services Experts
+                    </p>
+                  </div>
+                  {/* Ring accent */}
+                  <div className="absolute inset-0 rounded-2xl ring-2 ring-brand-blue/20" />
+                </div>
               </div>
 
               {/* Floating stats badge */}
