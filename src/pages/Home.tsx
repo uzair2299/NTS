@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone, Calendar, ShieldCheck, Star, Wrench,
-  Clock, Award, ChevronRight, Zap, Users
+  Clock, Award, ChevronRight, Users
 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
+import ntsLogo from '../assets/nts_logo.jpeg';
 import { servicesData, companyDetails } from '../data/servicesData';
 import { ServiceCard } from '../components/ServiceCard';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
@@ -65,10 +66,13 @@ export const Home: React.FC = () => {
 
             {/* ── Left: Text content ── */}
             <div className="space-y-7">
-              {/* Label */}
-              <div className="flex items-center gap-2 text-brand-blue">
-                <Zap className="w-4 h-4 fill-current" />
-                <span className="text-xs font-bold uppercase tracking-widest">Welcome to Experts</span>
+              {/* Logo image */}
+              <div className="inline-block bg-white/95 rounded-2xl px-4 py-2 shadow-lg shadow-black/30">
+                <img
+                  src={ntsLogo}
+                  alt="NTS — Network Technical Services Experts"
+                  className="h-10 w-auto object-contain"
+                />
               </div>
 
               {/* Headline */}
@@ -112,17 +116,29 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* ── Right: Hero image + floating badge ── */}
-            <div className="relative hidden lg:flex justify-center items-end">
-              {/* Main hero image */}
-              <div className="relative w-full max-w-lg">
-                <img
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80"
-                  alt="Professional technician in red uniform"
-                  className="w-full h-[520px] object-cover rounded-2xl shadow-2xl"
-                />
-                {/* Red bar accent on image */}
-                <div className="absolute inset-0 rounded-2xl ring-2 ring-brand-blue/30" />
+            {/* ── Right: NTS Logo card ── */}
+            <div className="relative hidden lg:flex justify-center items-center">
+              {/* Logo card */}
+              <div className="relative w-full max-w-lg flex items-center justify-center">
+                <div className="w-full h-[520px] rounded-2xl bg-white/5 border border-white/10 shadow-2xl flex items-center justify-center backdrop-blur-sm">
+                  {/* Decorative red glow behind logo */}
+                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl" />
+                  </div>
+                  {/* Logo */}
+                  <div className="relative z-10 bg-white rounded-2xl px-10 py-8 shadow-2xl shadow-black/40">
+                    <img
+                      src={ntsLogo}
+                      alt="NTS — Network Technical Services Experts"
+                      className="w-72 h-auto object-contain"
+                    />
+                    <p className="text-center text-xs text-slate-500 font-semibold tracking-wider uppercase mt-4">
+                      Network Technical Services Experts
+                    </p>
+                  </div>
+                  {/* Ring accent */}
+                  <div className="absolute inset-0 rounded-2xl ring-2 ring-brand-blue/20" />
+                </div>
               </div>
 
               {/* Floating stats badge */}
@@ -145,20 +161,20 @@ export const Home: React.FC = () => {
 
       </section>
 
-      {/* ── Dark booking strip — floats between hero and next section ── */}
+      {/* ── Booking strip — white card with black shade border ── */}
       <div className="relative z-20 -mt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-slate-900 rounded-2xl shadow-xl border border-white/10 px-6 py-5">
+          <div className="bg-white rounded-2xl shadow-2xl shadow-black/30 border border-black/12 px-6 py-5">
             <div className="flex flex-col md:flex-row items-center gap-4">
 
               {/* Left label */}
-              <div className="shrink-0 flex items-center gap-3 md:pr-6 md:border-r border-white/10">
-                <div className="p-2.5 bg-brand-blue/20 rounded-xl">
+              <div className="shrink-0 flex items-center gap-3 md:pr-6 md:border-r border-slate-200">
+                <div className="p-2.5 bg-red-50 rounded-xl">
                   <Clock className="w-5 h-5 text-brand-blue" />
                 </div>
                 <div>
-                  <div className="font-extrabold text-white text-sm leading-tight">24/7 Support</div>
-                  <div className="text-xs text-slate-400 font-medium mt-0.5">{companyDetails.phone}</div>
+                  <div className="font-extrabold text-slate-900 text-sm leading-tight">24/7 Support</div>
+                  <div className="text-xs text-slate-500 font-medium mt-0.5">{companyDetails.phone}</div>
                 </div>
               </div>
 
@@ -169,23 +185,23 @@ export const Home: React.FC = () => {
                   placeholder="Your Name"
                   value={bookingForm.name}
                   onChange={e => setBookingForm(p => ({ ...p, name: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
                 />
                 <input
                   type="email"
                   placeholder="Email Address"
                   value={bookingForm.email}
                   onChange={e => setBookingForm(p => ({ ...p, email: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
                 />
                 <select
                   value={bookingForm.service}
                   onChange={e => setBookingForm(p => ({ ...p, service: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-white/5 border border-white/15 text-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all appearance-none cursor-pointer"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-slate-500 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all appearance-none cursor-pointer"
                 >
-                  <option value="" className="bg-slate-900">Select Service</option>
+                  <option value="">Select Service</option>
                   {servicesData.map(s => (
-                    <option key={s.slug} value={s.title} className="bg-slate-900">{s.title}</option>
+                    <option key={s.slug} value={s.title}>{s.title}</option>
                   ))}
                 </select>
                 <Link
@@ -679,27 +695,42 @@ export const Home: React.FC = () => {
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
-           CONTACT CTA — dark red banner
+           CONTACT CTA — modern dark section
           ══════════════════════════════════════════════════════════════ */}
-      <section className="bg-brand-blue text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:3rem_3rem]" />
-        <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-brand-orange/20 skew-x-[-8deg] translate-x-1/4 hidden lg:block" />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center space-y-6">
-          <h2 className="text-2xl md:text-3xl font-extrabold">
-            Have a Maintenance Emergency or Planning a Renovation?
+      <section className="relative bg-slate-950 text-white py-20 overflow-hidden">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:3rem_3rem]" />
+        {/* Red glow accent — top left */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl pointer-events-none" />
+        {/* Red glow accent — bottom right */}
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-blue/15 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-brand-blue/10 border border-brand-blue/30 text-brand-blue text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
+            24/7 Emergency Support
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+            Have a Maintenance Emergency<br className="hidden sm:block" />
+            <span className="text-brand-blue"> or Planning a Renovation?</span>
           </h2>
-          <p className="text-red-100 max-w-2xl mx-auto text-sm md:text-base">
-            Contact us right now! Our rapid response team will diagnose and fix your problem.
-            Get a free site inspection and pricing estimate.
+          <p className="text-slate-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed mb-10">
+            Our rapid response team is on standby. Get a free site inspection
+            and transparent pricing estimate — no hidden charges.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            {/* Call button */}
             <a
               href={`tel:${companyDetails.phone.replace(/\s+/g, '')}`}
-              className="w-full sm:w-auto px-8 py-3.5 bg-brand-dark hover:bg-slate-900 text-white rounded-xl font-bold transition-all shadow-lg flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-3.5 bg-white hover:bg-slate-100 text-slate-900 rounded-xl font-extrabold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2.5 text-sm"
             >
-              <Phone className="w-5 h-5 animate-bounce" />
+              <Phone className="w-4 h-4 text-brand-blue" />
               Call Now: {companyDetails.phone}
             </a>
+            {/* WhatsApp button */}
             <a
               href={companyDetails.whatsapp}
               target="_blank"

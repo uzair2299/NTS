@@ -1,3 +1,7 @@
+import paintWorksImg from '../assets/paint_works.jpeg';
+import acServicesImg from '../assets/ac_services.jpeg';
+import plumbingImg from '../assets/plumbing_services.png';
+
 export interface ServiceDetail {
   title: string;
   iconName: string;
@@ -16,7 +20,7 @@ export const servicesData: ServiceDetail[] = [
     title: "AC Repair & Maintenance",
     iconName: "Wind",
     slug: "ac-repair-maintenance",
-    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    imageUrl: acServicesImg,
     shortDescription: "Professional AC repair, deep coil cleaning, filter replacement, gas topping up, and installation for residential and commercial units across Dubai.",
     longDescription: "We provide top-notch air conditioning maintenance services in Dubai. Our certified team ensures your AC unit functions efficiently, reducing electricity bills and ensuring healthy air quality. From emergency cooling failures to annual contract servicing, we do it all.",
     bulletPoints: [
@@ -34,7 +38,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Plumbing Services",
     iconName: "Droplets",
     slug: "plumbing-services",
-    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+    imageUrl: plumbingImg,
     shortDescription: "Expert leakage repair, water heater replacement, blockage removal, and pipe installations.",
     longDescription: "Our professional plumbers in Dubai handle everything from minor household leaks to complete pipeline overhauls. We use advanced diagnostic leak-detection tools to resolve your plumbing issues instantly without damage to your structure.",
     bulletPoints: [
@@ -52,7 +56,7 @@ export const servicesData: ServiceDetail[] = [
     title: "Painting Services",
     iconName: "Paintbrush",
     slug: "painting-services",
-    imageUrl: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80",
+    imageUrl: paintWorksImg,
     shortDescription: "Premium interior and exterior wall painting for apartments, villas, and office spaces.",
     longDescription: "Transform your space with our premium painting services in Dubai. We cover interior, exterior, wallpaper installation, wall prep, and plastering to give your property a perfect, long-lasting finish using high-quality, eco-friendly paints.",
     bulletPoints: [

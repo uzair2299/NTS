@@ -21,8 +21,10 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
-        {/* Overlay gradient */}
+        {/* Base gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        {/* Dark hover overlay */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/45 transition-all duration-400 ease-in-out" />
 
         {/* Icon badge on the image */}
         <div className="absolute bottom-3 left-3 flex items-center gap-2">
