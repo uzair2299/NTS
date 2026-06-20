@@ -148,7 +148,7 @@ export const Home: React.FC = () => {
       {/* ── White booking strip — floats between hero and next section ── */}
       <div className="relative z-20 -mt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-2xl shadow-black/20 border border-slate-100 px-6 py-5">
+          <div className="bg-white rounded-2xl shadow-lg border border-slate-200 ring-1 ring-slate-100 px-6 py-5">
             <div className="flex flex-col md:flex-row items-center gap-4">
 
               {/* Left label */}
