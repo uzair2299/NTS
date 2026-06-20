@@ -145,19 +145,19 @@ export const Home: React.FC = () => {
 
       </section>
 
-      {/* ── White booking strip — floats between hero and next section ── */}
+      {/* ── Dark booking strip — floats between hero and next section ── */}
       <div className="relative z-20 -mt-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-lg border border-slate-200 ring-1 ring-slate-100 px-6 py-5">
+          <div className="bg-slate-900 rounded-2xl shadow-xl border border-white/10 px-6 py-5">
             <div className="flex flex-col md:flex-row items-center gap-4">
 
               {/* Left label */}
-              <div className="shrink-0 flex items-center gap-3 md:pr-6 md:border-r border-slate-200">
-                <div className="p-2.5 bg-red-50 rounded-xl">
+              <div className="shrink-0 flex items-center gap-3 md:pr-6 md:border-r border-white/10">
+                <div className="p-2.5 bg-brand-blue/20 rounded-xl">
                   <Clock className="w-5 h-5 text-brand-blue" />
                 </div>
                 <div>
-                  <div className="font-extrabold text-brand-dark text-sm leading-tight">24/7 Support</div>
+                  <div className="font-extrabold text-white text-sm leading-tight">24/7 Support</div>
                   <div className="text-xs text-slate-400 font-medium mt-0.5">{companyDetails.phone}</div>
                 </div>
               </div>
@@ -169,23 +169,23 @@ export const Home: React.FC = () => {
                   placeholder="Your Name"
                   value={bookingForm.name}
                   onChange={e => setBookingForm(p => ({ ...p, name: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-brand-dark placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
                 />
                 <input
                   type="email"
                   placeholder="Email Address"
                   value={bookingForm.email}
                   onChange={e => setBookingForm(p => ({ ...p, email: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-brand-dark placeholder-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-white/5 border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all"
                 />
                 <select
                   value={bookingForm.service}
                   onChange={e => setBookingForm(p => ({ ...p, service: e.target.value }))}
-                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-slate-50 border border-slate-200 text-slate-500 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all appearance-none cursor-pointer"
+                  className="flex-1 px-4 py-2.5 rounded-xl text-sm bg-white/5 border border-white/15 text-slate-400 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/20 transition-all appearance-none cursor-pointer"
                 >
-                  <option value="">Select Service</option>
+                  <option value="" className="bg-slate-900">Select Service</option>
                   {servicesData.map(s => (
-                    <option key={s.slug} value={s.title}>{s.title}</option>
+                    <option key={s.slug} value={s.title} className="bg-slate-900">{s.title}</option>
                   ))}
                 </select>
                 <Link
