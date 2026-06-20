@@ -100,50 +100,50 @@ export const Home: React.FC = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-white/10">
                 {stats.map((s, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-xl font-extrabold text-brand-blue">{s.value}</div>
-                    <div className="text-[11px] text-slate-400 font-medium mt-0.5">{s.label}</div>
+                    <div className="text-xl font-extrabold text-white">{s.value}</div>
+                    <div className="text-[11px] text-white font-medium mt-0.5">{s.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* ── Right: NTS Logo card ── */}
-            <div className="relative flex justify-center items-center mt-12 lg:mt-0">
+            {/* ── Right: NTS Logo card ── */}
+            <div className="relative flex justify-center items-center mt-12 lg:mt-0 px-2 sm:px-6 lg:px-0">
               {/* Logo card */}
               <div className="relative w-full max-w-lg flex items-center justify-center">
-                <div className="w-full h-[380px] lg:h-[520px] rounded-2xl bg-white/5 border border-white/10 shadow-2xl flex items-center justify-center backdrop-blur-sm">
-                  {/* Decorative red glow behind logo */}
-                  <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-brand-blue/15 rounded-full blur-3xl" />
-                  </div>
+                <div className="w-full h-[320px] sm:h-[380px] lg:h-[520px] rounded-2xl bg-white flex flex-col items-center justify-center relative overflow-hidden">
+                  {/* Solid clean background - glow removed as requested */}
+                  
                   {/* Logo */}
-                  <div className="relative z-10 bg-white rounded-2xl px-8 py-6 lg:px-10 lg:py-8 shadow-2xl shadow-black/40 mx-4">
+                  <div className="relative z-10 px-4 sm:px-8 flex flex-col items-center justify-center w-full h-full">
                     <img
                       src={ntsLogo}
                       alt="NTS — Network Technical Services Experts"
-                      className="w-56 lg:w-72 h-auto object-contain mx-auto"
+                      className="w-64 sm:w-80 lg:w-96 max-w-full h-auto object-contain mx-auto"
                     />
-                    <p className="text-center text-xs text-slate-500 font-semibold tracking-wider uppercase mt-4">
+                    <p className="text-center text-[9px] sm:text-[10px] lg:text-sm text-slate-500 font-bold tracking-widest uppercase mt-4 sm:mt-6">
                       Network Technical Services Experts
                     </p>
                   </div>
-                  {/* Ring accent */}
-                  <div className="absolute inset-0 rounded-2xl ring-2 ring-brand-blue/20" />
+
+                  {/* Inner ring accent */}
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-200 pointer-events-none" />
                 </div>
               </div>
 
               {/* Floating stats badge */}
-              <div className="absolute top-8 -right-4 bg-white text-brand-dark rounded-2xl shadow-2xl p-5 text-center min-w-[110px]">
-                <div className="text-3xl font-extrabold text-brand-blue leading-none">4938</div>
-                <div className="text-[11px] font-bold text-slate-500 mt-1 leading-tight">Happy<br />Customers</div>
+              <div className="absolute top-4 right-0 sm:top-8 sm:-right-4 bg-white text-brand-dark rounded-xl sm:rounded-2xl border border-slate-200 p-3 sm:p-5 text-center min-w-[80px] sm:min-w-[110px]">
+                <div className="text-xl sm:text-3xl font-extrabold text-brand-blue leading-none">4938</div>
+                <div className="text-[9px] sm:text-[11px] font-bold text-slate-500 mt-1 leading-tight">Happy<br />Customers</div>
               </div>
 
               {/* Experience badge bottom left */}
-              <div className="absolute -bottom-4 -left-4 bg-brand-blue text-white rounded-2xl shadow-xl px-5 py-4 flex items-center gap-3">
-                <Award className="w-8 h-8 shrink-0" />
+              <div className="absolute -bottom-3 left-0 sm:-bottom-4 sm:-left-4 bg-brand-blue text-white rounded-xl sm:rounded-2xl border border-brand-blue-700 px-4 py-3 sm:px-5 sm:py-4 flex items-center gap-2 sm:gap-3">
+                <Award className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
                 <div>
-                  <div className="text-xl font-extrabold leading-none">30+</div>
-                  <div className="text-[11px] font-semibold opacity-90 leading-tight">Years Work<br />Experience</div>
+                  <div className="text-lg sm:text-xl font-extrabold leading-none">30+</div>
+                  <div className="text-[9px] sm:text-[11px] font-semibold opacity-90 leading-tight">Years Work<br />Experience</div>
                 </div>
               </div>
             </div>
