@@ -18,7 +18,7 @@ export const About: React.FC = () => {
 
   const stats = [
     { value: '4,938+', label: 'Jobs Completed' },
-    { value: '30+', label: 'Years Experience' },
+    { value: '8+', label: 'Years Experience' },
     { value: '4.9★', label: 'Customer Rating' },
     { value: '24/7', label: 'Emergency Support' },
   ];
