@@ -110,7 +110,7 @@ export const servicesData: ServiceDetail[] = [
     title: "General Maintenance & Handyman",
     iconName: "Wrench",
     slug: "general-maintenance-handyman",
-    imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80",
     shortDescription: "Quick repairs, TV mounting, furniture assembly, door lock repair, and picture hanging.",
     longDescription: "Professional handyman services in Dubai for all those small, tricky tasks around the house. Our team comes fully equipped with the right tools to fix, mount, or install anything quickly and cleanly.",
     bulletPoints: [
@@ -123,6 +123,42 @@ export const servicesData: ServiceDetail[] = [
     ],
     pricing: "From 100 AED",
     highlights: ["Fully equipped mobile toolkits", "Flexible hourly billing", "Polite and professional handymen", "Mess-free post-cleanup"]
+  },
+  {
+    title: "Carpenter Services",
+    iconName: "Hammer",
+    slug: "carpenter-services",
+    imageUrl: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=800&q=80",
+    shortDescription: "Custom woodworking, furniture repair, door installation, and bespoke cabinetry solutions.",
+    longDescription: "Our expert carpenters deliver high-quality woodwork tailored to your needs. From fixing broken furniture and installing wooden doors to creating custom cabinets and shelving, we ensure precision and durability in every project.",
+    bulletPoints: [
+      "Custom wardrobe and cabinet creation",
+      "Door lock and hinge repairs",
+      "Wooden flooring installation and repair",
+      "Bespoke shelving and storage units",
+      "Pergola and outdoor decking woodwork",
+      "Furniture assembly and dismantling"
+    ],
+    pricing: "From 120 AED",
+    highlights: ["Skilled master carpenters", "Premium quality wood and materials", "Custom designs available", "Timely project completion"]
+  },
+  {
+    title: "Cleaning Services",
+    iconName: "Sparkles",
+    slug: "cleaning-services",
+    imageUrl: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80",
+    shortDescription: "Comprehensive deep cleaning, move-in/move-out cleaning, and regular residential or commercial cleaning.",
+    longDescription: "Maintain a spotless and hygienic environment with our professional cleaning services. Our trained staff uses eco-friendly products and advanced equipment for deep cleaning, post-construction cleanup, and regular maintenance for homes and offices.",
+    bulletPoints: [
+      "Deep cleaning for villas and apartments",
+      "Move-in and move-out thorough cleaning",
+      "Office and commercial space sanitization",
+      "Sofa, carpet, and mattress shampooing",
+      "Post-construction debris removal",
+      "Kitchen and bathroom intensive hygiene cleaning"
+    ],
+    pricing: "From 35 AED/Hour",
+    highlights: ["Trained and background-checked staff", "Eco-friendly cleaning supplies", "Flexible scheduling", "Satisfaction guaranteed"]
   }
 ];
 
