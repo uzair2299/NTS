@@ -120,7 +120,7 @@ export const About: React.FC = () => {
 
               {/* Experience badge */}
               <div className="absolute bottom-6 left-6 bg-brand-blue text-white rounded-2xl px-6 py-4 flex items-center gap-4 shadow-xl">
-                <div className="text-4xl font-extrabold leading-none">30<span className="text-2xl">+</span></div>
+                <div className="text-4xl font-extrabold leading-none">8<span className="text-2xl">+</span></div>
                 <div className="text-xs font-semibold leading-tight">Years Work<br />Experience</div>
               </div>
 

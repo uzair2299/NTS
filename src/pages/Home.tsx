@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
 
   const stats = [
     { value: '4,938+', label: 'Jobs Completed' },
-    { value: '30+', label: 'Years Experience' },
+    { value: '8+', label: 'Years Experience' },
     { value: '4.9★', label: 'Customer Rating' },
     { value: '24/7', label: 'Emergency Support' },
   ];
@@ -114,7 +114,7 @@ export const Home: React.FC = () => {
               <div className="relative w-full max-w-lg flex items-center justify-center">
                 <div className="w-full h-[320px] sm:h-[380px] lg:h-[520px] rounded-2xl bg-white flex flex-col items-center justify-center relative overflow-hidden">
                   {/* Solid clean background - glow removed as requested */}
-                  
+
                   {/* Logo */}
                   <div className="relative z-10 px-4 sm:px-8 flex flex-col items-center justify-center w-full h-full">
                     <img
@@ -142,7 +142,7 @@ export const Home: React.FC = () => {
               <div className="absolute -bottom-3 left-0 sm:-bottom-4 sm:-left-4 bg-brand-blue text-white rounded-xl sm:rounded-2xl border border-brand-blue-700 px-4 py-3 sm:px-5 sm:py-4 flex items-center gap-2 sm:gap-3">
                 <Award className="w-6 h-6 sm:w-8 sm:h-8 shrink-0" />
                 <div>
-                  <div className="text-lg sm:text-xl font-extrabold leading-none">30+</div>
+                  <div className="text-lg sm:text-xl font-extrabold leading-none">8+</div>
                   <div className="text-[9px] sm:text-[11px] font-semibold opacity-90 leading-tight">Years Work<br />Experience</div>
                 </div>
               </div>
@@ -273,7 +273,7 @@ export const Home: React.FC = () => {
 
               {/* Experience badge bottom-left */}
               <div className="absolute bottom-6 left-6 bg-brand-blue text-white rounded-2xl px-6 py-4 flex items-center gap-4 shadow-xl">
-                <div className="text-4xl font-extrabold leading-none">30<span className="text-2xl">+</span></div>
+                <div className="text-4xl font-extrabold leading-none">8<span className="text-2xl">+</span></div>
                 <div className="text-xs font-semibold leading-tight">
                   Years Work<br />Experience
                 </div>
@@ -299,12 +299,12 @@ export const Home: React.FC = () => {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark leading-tight">
-                Our goal is ensure best{' '}
-                <span className="text-brand-blue">electrical accessibility.</span>
+                Delivering excellence in{' '}
+                <span className="text-brand-blue">technical maintenance & MEP services.</span>
               </h2>
 
               <p className="text-brand-slate text-sm leading-relaxed">
-                Network Technical Services Experts (NTS) is powered by a team of not only professionals, however, and pioneers in our Company. We have a tendency to believe the idea that effort making in any website.
+                Network Technical Services Experts (NTS) is powered by a dedicated team of certified engineers and industry professionals. We are committed to providing reliable, engineering-grade solutions that ensure the safety, efficiency, and longevity of your residential and commercial properties.
               </p>
 
               {/* Checklist */}
@@ -405,8 +405,8 @@ export const Home: React.FC = () => {
 
                   {/* Gradient overlay — always present */}
                   <div className={`absolute inset-0 transition-opacity duration-300 ${isFeatured
-                      ? 'bg-gradient-to-t from-black/90 via-black/40 to-black/10'
-                      : 'bg-gradient-to-t from-black/85 via-black/30 to-transparent'
+                    ? 'bg-gradient-to-t from-black/90 via-black/40 to-black/10'
+                    : 'bg-gradient-to-t from-black/85 via-black/30 to-transparent'
                     }`} />
 
                   {/* Red left accent on featured */}
