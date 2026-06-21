@@ -160,6 +160,8 @@ export const ContactForm: React.FC = () => {
             <option value="Painting Services">Painting Services</option>
             <option value="Electrical Services">Electrical Services</option>
             <option value="Remodeling & Fit-out">Remodeling & Fit-out</option>
+            <option value="Carpenter Services">Carpenter Services</option>
+            <option value="Cleaning Services">Cleaning Services</option>
             <option value="General Maintenance & Handyman">General Maintenance & Handyman</option>
           </select>
           {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}

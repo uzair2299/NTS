@@ -254,8 +254,8 @@ export const Home: React.FC = () => {
               {/* Main image */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
-                  alt="Technician at work"
+                  src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
+                  alt="Dubai Skyline / UAE Context"
                   className="w-full h-[480px] object-cover"
                 />
                 {/* Dark overlay on bottom third */}
@@ -265,8 +265,8 @@ export const Home: React.FC = () => {
               {/* Small accent image top-right */}
               <div className="absolute -top-6 -right-6 hidden md:block w-40 h-40 rounded-xl overflow-hidden shadow-xl ring-4 ring-white">
                 <img
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=300&q=80"
-                  alt="Technician tool work"
+                  src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=300&q=80"
+                  alt="MEP Technician at work"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -491,7 +491,6 @@ export const Home: React.FC = () => {
               {[
                 { value: '4,938+', label: 'Projects Done' },
                 { value: '100%', label: 'Satisfaction' },
-                { value: '1-Year', label: 'Warranty' },
               ].map((s, i) => (
                 <div key={i} className="text-center">
                   <div className="text-2xl font-extrabold text-brand-blue">{s.value}</div>
