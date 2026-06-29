@@ -30,7 +30,7 @@ export const Navbar: React.FC = () => {
       path: '/services',
       subLinks: [
         { name: 'Maintenance Services', path: '/services/maintenance' },
-        { name: 'Renovation & Remodeling', path: '/services#renovation' },
+        { name: 'Renovation & Remodeling', path: '/services/renovation' },
         { name: 'Painting Services', path: '/services#painting' },
         { name: 'HVAC (Air Conditioning) Services', path: '/services#hvac' },
         { name: 'Electrical Services', path: '/services#electrical' },
