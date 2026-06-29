@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Maintenance from './pages/Maintenance';
 
 // Scroll to top helper on route change (except for hash targets)
 const ScrollToTop = () => {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/maintenance" element={<Maintenance />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
