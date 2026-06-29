@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone, Calendar, ShieldCheck, Star, Wrench,
-  Clock, Award, ChevronRight, Users
+  Clock, Award, ChevronRight
 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import ntsLogo from '../assets/nts_logo.jpeg';
@@ -21,26 +21,6 @@ export const Home: React.FC = () => {
     { value: '24/7', label: 'Emergency Support' },
   ];
 
-  const testimonials = [
-    {
-      name: "Omar Al-Nuaimi",
-      location: "Jumeirah Beach Residence (JBR), Dubai",
-      text: "Excellent electrical and AC repair services. The technicians were skilled, fast, and cleaned up after they finished. Highly impressed by their professionalism.",
-      rating: 5,
-    },
-    {
-      name: "Aisha Al-Mansoori",
-      location: "Downtown Dubai, UAE",
-      text: "They did an amazing job remodeling my bathroom and painting the living room. Respectful, organized, and finished right on time. My home looks fresh.",
-      rating: 5,
-    },
-    {
-      name: "Sarah Jenkins",
-      location: "Dubai Marina, Dubai",
-      text: "Had a plumbing emergency on a Friday night with a burst water pipe. They arrived within 30 minutes and resolved the issue immediately. Outstanding service!",
-      rating: 5,
-    },
-  ];
 
   const whyUs = [
     { icon: ShieldCheck, title: 'How to Benefited Our Services', desc: 'Certified experts with guaranteed first-time-right workmanship.' },

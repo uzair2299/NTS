@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
       {/* ── Main Navbar — dark background ─────────────────────────────── */}
       <header
         style={{ position: 'sticky', top: 0, zIndex: 40 }}
-        className={`w-full transition-all duration-300 ${
+        className={`w-full border-b border-white/20 transition-all duration-300 ${
           isScrolled
             ? 'bg-brand-dark/98 backdrop-blur-md shadow-xl shadow-black/40 py-3'
             : 'bg-brand-dark py-4'
