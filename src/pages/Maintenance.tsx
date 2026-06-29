@@ -10,16 +10,16 @@ import {
 
 // --- DATA STRUCTURES ---
 const services = [
-  { icon: Home, title: 'General Home Maintenance', desc: 'Routine maintenance to keep your home safe, functional, and well-maintained.' },
-  { icon: Building, title: 'Villa Maintenance', desc: 'Complete maintenance solutions for villas, including inspections, repairs, and preventive maintenance.' },
-  { icon: Building2, title: 'Apartment Maintenance', desc: 'Reliable maintenance services for apartments, studios, and residential units.' },
-  { icon: Briefcase, title: 'Office Maintenance', desc: 'Maintain a professional workplace with scheduled inspections and timely repairs.' },
-  { icon: Wrench, title: 'Handyman Services', desc: 'Professional handyman solutions for all minor repairs and installations.' },
-  { icon: Factory, title: 'Property Maintenance', desc: 'Comprehensive maintenance for residential and commercial properties.' },
-  { icon: Settings, title: 'Preventive Maintenance', desc: 'Regular inspections and servicing to prevent costly repairs.' },
-  { icon: AlertTriangle, title: 'Corrective Maintenance', desc: 'Quick diagnosis and repair of existing issues.' },
-  { icon: Clock, title: 'Emergency Maintenance', desc: 'Fast-response emergency repair services available when unexpected problems arise.' },
-  { icon: Calendar, title: 'Annual Maintenance (AMC)', desc: 'Affordable maintenance packages for year-round peace of mind.' },
+  { icon: Home, image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80', title: 'General Home Maintenance', desc: 'Routine maintenance to keep your home safe, functional, and well-maintained.' },
+  { icon: Building, image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80', title: 'Villa Maintenance', desc: 'Complete maintenance solutions for villas, including inspections, repairs, and preventive maintenance.' },
+  { icon: Building2, image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80', title: 'Apartment Maintenance', desc: 'Reliable maintenance services for apartments, studios, and residential units.' },
+  { icon: Briefcase, image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80', title: 'Office Maintenance', desc: 'Maintain a professional workplace with scheduled inspections and timely repairs.' },
+  { icon: Wrench, image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80', title: 'Handyman Services', desc: 'Professional handyman solutions for all minor repairs and installations.' },
+  { icon: Factory, image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80', title: 'Property Maintenance', desc: 'Comprehensive maintenance for residential and commercial properties.' },
+  { icon: Settings, image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80', title: 'Preventive Maintenance', desc: 'Regular inspections and servicing to prevent costly repairs.' },
+  { icon: AlertTriangle, image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80', title: 'Corrective Maintenance', desc: 'Quick diagnosis and repair of existing issues.' },
+  { icon: Clock, image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80', title: 'Emergency Maintenance', desc: 'Fast-response emergency repair services available when unexpected problems arise.' },
+  { icon: Calendar, image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80', title: 'Annual Maintenance (AMC)', desc: 'Affordable maintenance packages for year-round peace of mind.' },
 ];
 
 const includedItems = [
@@ -104,10 +104,10 @@ export const Maintenance: React.FC = () => {
       
       {/* 1. HERO SECTION */}
       <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 bg-brand-dark overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-25">
+        <div className="absolute inset-0 z-0 opacity-40">
           <img 
-            src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1920&q=80" 
-            alt="Maintenance Team" 
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" 
+            alt="Premium Villa Maintenance" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/40" />
@@ -155,12 +155,21 @@ export const Maintenance: React.FC = () => {
             {services.map((srv, idx) => {
               const Icon = srv.icon;
               return (
-                <div key={idx} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                  <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
-                    <Icon className="w-7 h-7" />
+                <div key={idx} className="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex flex-col">
+                  <div className="w-full h-48 relative overflow-hidden">
+                    <img 
+                      src={srv.image} 
+                      alt={srv.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    />
+                    <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-blue shadow-lg group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                      <Icon className="w-6 h-6" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-brand-dark mb-3">{srv.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{srv.desc}</p>
+                  <div className="p-8 flex-1 flex flex-col">
+                    <h3 className="text-xl font-bold text-brand-dark mb-3">{srv.title}</h3>
+                    <p className="text-slate-600 leading-relaxed flex-1">{srv.desc}</p>
+                  </div>
                 </div>
               );
             })}
@@ -249,31 +258,41 @@ export const Maintenance: React.FC = () => {
       </section>
 
       {/* 7. OUR MAINTENANCE PROCESS */}
-      <section className="py-20 bg-brand-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-brand-dark relative overflow-hidden">
+        {/* Decorative ambient background */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl mix-blend-screen pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl mix-blend-screen pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Our Maintenance Process</h2>
-            <p className="text-lg text-slate-300">A simple, transparent approach to property care.</p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">Our Maintenance Process</h2>
+            <p className="text-lg text-slate-400">A simple, transparent approach to property care.</p>
           </div>
           
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2 relative">
-            {/* Connecting line for desktop */}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-white/20 -translate-y-1/2 z-0" />
-            
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {processSteps.map((step, idx) => (
-              <React.Fragment key={idx}>
-                <div className="relative z-10 flex flex-col items-center group">
-                  <div className="w-16 h-16 rounded-full bg-brand-blue text-white flex items-center justify-center text-xl font-black shadow-[0_0_0_8px_rgba(255,255,255,0.05)] group-hover:bg-brand-orange transition-colors">
-                    {step.step}
-                  </div>
-                  <div className="mt-6 text-center">
-                    <span className="font-bold text-sm md:text-base">{step.title}</span>
-                  </div>
+              <div key={idx} className="relative group p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-brand-blue/50 transition-all duration-300 overflow-hidden">
+                {/* Giant watermark number */}
+                <div className="absolute -top-4 -right-2 text-9xl font-black text-white/[0.03] group-hover:text-brand-blue/[0.05] transition-colors duration-500 pointer-events-none select-none">
+                  0{step.step}
                 </div>
-                {idx < processSteps.length - 1 && (
-                  <div className="md:hidden w-0.5 h-10 bg-brand-blue my-2" />
-                )}
-              </React.Fragment>
+                
+                {/* Modern Badged Number */}
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-orange to-orange-600 rounded-xl flex items-center justify-center text-white font-extrabold text-lg mb-6 shadow-lg shadow-brand-orange/20 group-hover:scale-110 transition-transform duration-300">
+                  {step.step}
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-3 relative z-10">{step.title}</h3>
+                
+                <p className="text-slate-400 text-sm leading-relaxed relative z-10">
+                  {idx === 0 && "Schedule an appointment online, via WhatsApp, or over the phone at your earliest convenience."}
+                  {idx === 1 && "Our certified technicians arrive on-site to comprehensively assess the issue."}
+                  {idx === 2 && "Receive a transparent, no-obligation estimate with absolutely zero hidden fees."}
+                  {idx === 3 && "Our experts execute the job safely, cleanly, and efficiently using modern tools."}
+                  {idx === 4 && "We conduct a strict post-work review to ensure our high standards are fully met."}
+                  {idx === 5 && "We guarantee our workmanship and ensure you are 100% happy with the results."}
+                </p>
+              </div>
             ))}
           </div>
         </div>
