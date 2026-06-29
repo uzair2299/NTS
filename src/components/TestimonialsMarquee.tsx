@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 
 const allTestimonials = [
   {
@@ -7,55 +7,83 @@ const allTestimonials = [
     role: "Villa Owner, Jumeirah",
     text: "NTS completely overhauled our villa's AC system before the summer heat hit. The technicians were professional, punctual, and left everything spotless.",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80",
+    rating: 5,
+    isOnline: true,
   },
   {
     name: "Sarah Jenkins",
     role: "Resident, Dubai Marina",
     text: "We had a massive plumbing emergency at 2 AM. Their 24/7 team arrived within 30 minutes and saved our apartment from flooding. Absolute lifesavers!",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+    rating: 4,
+    isOnline: false,
   },
   {
     name: "Ahmed Mansoori",
     role: "Restaurant Manager, Downtown Dubai",
     text: "Reliable MEP maintenance is critical for our business. NTS provides top-tier electrical and plumbing contracts that keep our operations running smoothly.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    rating: 5,
+    isOnline: true,
   },
   {
     name: "David Robertson",
     role: "Property Manager, Al Barsha",
     text: "I rely on them for all my tenants' maintenance needs. From fresh painting to intricate carpentry, their workmanship is always guaranteed first-time-right.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    rating: 5,
+    isOnline: false,
   },
   {
     name: "Fatima Al-Hosani",
     role: "Homeowner, Arabian Ranches",
     text: "The bathroom remodeling team was fantastic. They managed the tiling and sanitary ware installation perfectly. High quality and transparent pricing.",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+    rating: 4,
+    isOnline: true,
   },
   {
     name: "Michael Chang",
     role: "Office Admin, Business Bay",
     text: "NTS handles our annual office maintenance. Finding a DEWA-compliant and fully certified team in Dubai that you can trust is hard, but NTS delivers every time.",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80",
+    rating: 5,
+    isOnline: false,
   },
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: any }) => {
   return (
-    <div className="flex-shrink-0 w-[350px] p-8 bg-[#f4f7fb] rounded-2xl mx-3 hover:-translate-y-1 transition-transform duration-300">
-      <div className="text-4xl text-brand-blue font-serif leading-none mb-4 opacity-70">"</div>
-      <p className="text-slate-700 text-[15px] font-medium leading-relaxed mb-6 h-[80px]">
-        {testimonial.text}
+    <div className="flex-shrink-0 w-[320px] p-6 bg-white rounded-3xl mx-3 border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 relative overflow-hidden group">
+      {/* Decorative background quote */}
+      <Quote className="absolute -top-2 -right-2 w-20 h-20 text-brand-blue/[0.03] rotate-12 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110 pointer-events-none" />
+      
+      {/* Star Rating */}
+      <div className="flex gap-1 mb-3 relative z-10">
+        {[...Array(5)].map((_, i) => (
+          <Star 
+            key={i} 
+            className={`w-3.5 h-3.5 ${i < (testimonial.rating || 5) ? 'fill-amber-400 text-amber-400' : 'fill-slate-200 text-slate-200'}`} 
+          />
+        ))}
+      </div>
+
+      <p className="text-slate-600 text-sm leading-relaxed mb-5 min-h-[80px] relative z-10 font-medium line-clamp-4">
+        "{testimonial.text}"
       </p>
-      <div className="flex items-center gap-3">
-        <img
-          src={testimonial.image}
-          alt={testimonial.name}
-          className="w-10 h-10 rounded-full object-cover"
-        />
+
+      <div className="flex items-center gap-3 relative z-10 pt-4 border-t border-slate-50">
+        <div className="relative">
+          <img
+            src={testimonial.image}
+            alt={testimonial.name}
+            className="w-10 h-10 rounded-full object-cover ring-2 ring-brand-blue/5"
+          />
+          <div className={`absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full border-2 border-white shadow-sm ${testimonial.isOnline !== false ? 'bg-green-500' : 'bg-slate-300'}`} />
+        </div>
         <div>
-          <h4 className="font-bold text-brand-dark text-[15px]">{testimonial.name}</h4>
-          <span className="text-xs text-slate-500 font-medium">{testimonial.role}</span>
+          <h4 className="font-extrabold text-brand-dark text-sm tracking-tight">{testimonial.name}</h4>
+          <span className="text-[10px] text-brand-blue font-bold uppercase tracking-wider block mt-0.5">{testimonial.role}</span>
         </div>
       </div>
     </div>
@@ -77,9 +105,13 @@ export const TestimonialsMarquee: React.FC = () => {
 
 
         {/* Heading */}
-        <h2 className="text-3xl md:text-5xl font-extrabold text-brand-dark max-w-2xl mx-auto leading-tight">
-          Words of praise from others about our presence.
-        </h2>
+        <div className="flex flex-col items-center">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-brand-dark max-w-2xl mx-auto leading-tight relative inline-block">
+            Words of praise from others about our presence.
+            {/* Decorative underline */}
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-brand-blue rounded-full opacity-80" />
+          </h2>
+        </div>
       </div>
 
       {/* Marquee Container */}
