@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Phone, Calendar, ShieldCheck, Star, Wrench,
-  Clock, Award, ChevronRight, Users
+  Clock, Award, ChevronRight
 } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import ntsLogo from '../assets/nts_logo.jpeg';
 import { servicesData, companyDetails } from '../data/servicesData';
 import { ServiceCard } from '../components/ServiceCard';
 import { BeforeAfterSlider } from '../components/BeforeAfterSlider';
+import { TestimonialsMarquee } from '../components/TestimonialsMarquee';
 
 export const Home: React.FC = () => {
   const [bookingForm, setBookingForm] = useState({ name: '', email: '', service: '' });
@@ -20,26 +21,6 @@ export const Home: React.FC = () => {
     { value: '24/7', label: 'Emergency Support' },
   ];
 
-  const testimonials = [
-    {
-      name: "Omar Al-Nuaimi",
-      location: "Jumeirah Beach Residence (JBR), Dubai",
-      text: "Excellent electrical and AC repair services. The technicians were skilled, fast, and cleaned up after they finished. Highly impressed by their professionalism.",
-      rating: 5,
-    },
-    {
-      name: "Aisha Al-Mansoori",
-      location: "Downtown Dubai, UAE",
-      text: "They did an amazing job remodeling my bathroom and painting the living room. Respectful, organized, and finished right on time. My home looks fresh.",
-      rating: 5,
-    },
-    {
-      name: "Sarah Jenkins",
-      location: "Dubai Marina, Dubai",
-      text: "Had a plumbing emergency on a Friday night with a burst water pipe. They arrived within 30 minutes and resolved the issue immediately. Outstanding service!",
-      rating: 5,
-    },
-  ];
 
   const whyUs = [
     { icon: ShieldCheck, title: 'How to Benefited Our Services', desc: 'Certified experts with guaranteed first-time-right workmanship.' },
@@ -638,47 +619,7 @@ export const Home: React.FC = () => {
       {/* ══════════════════════════════════════════════════════════════
            TESTIMONIALS
           ══════════════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <div className="flex items-center justify-center gap-2 text-brand-blue mb-3">
-              <div className="w-6 h-0.5 bg-brand-blue" />
-              <span className="text-xs font-bold uppercase tracking-widest">Meet Our Latest</span>
-              <div className="w-6 h-0.5 bg-brand-blue" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark">What Our Clients Say</h2>
-            <p className="text-brand-slate mt-3 text-sm max-w-xl mx-auto">
-              Verified reviews from residential and office owners across JBR, Downtown, Al Barsha, and other areas in Dubai.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((test, idx) => (
-              <div key={idx} className="bg-brand-light p-7 rounded-2xl border border-slate-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
-                {/* Red quote mark */}
-                <div className="text-5xl text-brand-blue font-serif leading-none mb-3 opacity-40">"</div>
-                <div className="flex gap-1 mb-4">
-                  {[...Array(test.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-brand-slate text-sm leading-relaxed italic flex-1">
-                  "{test.text}"
-                </p>
-                <div className="pt-5 border-t border-slate-200 mt-5 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center shrink-0">
-                    <Users className="w-5 h-5 text-brand-blue" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-brand-dark text-sm">{test.name}</h4>
-                    <span className="text-[11px] text-brand-blue font-medium">{test.location}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsMarquee />
 
       {/* ══════════════════════════════════════════════════════════════
            CONTACT CTA — modern dark section

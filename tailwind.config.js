@@ -58,6 +58,20 @@ export default {
       fontFamily: {
         sans: ['Outfit', 'Inter', 'sans-serif'],
       },
+      keyframes: {
+        'marquee-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'marquee-right': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        'marquee-left': 'marquee-left 35s linear infinite',
+        'marquee-right': 'marquee-right 35s linear infinite',
+      },
     },
   },
   plugins: [],

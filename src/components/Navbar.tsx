@@ -25,7 +25,22 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
+    { 
+      name: 'Services', 
+      path: '/services',
+      subLinks: [
+        { name: 'Maintenance Services', path: '/services/maintenance' },
+        { name: 'Renovation & Remodeling', path: '/services#renovation' },
+        { name: 'Painting Services', path: '/services#painting' },
+        { name: 'HVAC (Air Conditioning) Services', path: '/services#hvac' },
+        { name: 'Electrical Services', path: '/services#electrical' },
+        { name: 'Plumbing Services', path: '/services#plumbing' },
+        { name: 'Carpentry Services', path: '/services#carpentry' },
+        { name: 'Waterproofing & Leak Repair', path: '/services#waterproofing' },
+        { name: 'Fit-Out Services', path: '/services#fitout' },
+        { name: 'Outdoor & Landscaping Services', path: '/services#landscaping' }
+      ]
+    },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -36,7 +51,7 @@ export const Navbar: React.FC = () => {
       {/* ── Main Navbar — dark background ─────────────────────────────── */}
       <header
         style={{ position: 'sticky', top: 0, zIndex: 40 }}
-        className={`w-full transition-all duration-300 ${
+        className={`w-full border-b border-white/20 transition-all duration-300 ${
           isScrolled
             ? 'bg-brand-dark/98 backdrop-blur-md shadow-xl shadow-black/40 py-3'
             : 'bg-brand-dark py-4'
@@ -57,21 +72,44 @@ export const Navbar: React.FC = () => {
             {/* Desktop nav — centered */}
             <nav className="hidden md:flex items-center gap-7 flex-1 justify-center">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-sm font-semibold transition-all duration-200 relative group ${
-                    isActive(link.path)
-                      ? 'text-brand-blue'
-                      : 'text-slate-300 hover:text-white'
-                  }`}
-                >
-                  {link.name}
-                  {/* animated underline */}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-brand-blue transition-all duration-300 ${
-                    isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`} />
-                </Link>
+                <div key={link.name} className="relative group">
+                  <Link
+                    to={link.path}
+                    className={`text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 relative py-2 ${
+                      isActive(link.path)
+                        ? 'text-brand-blue'
+                        : 'text-slate-300 hover:text-white'
+                    }`}
+                  >
+                    {link.name}
+                    {link.subLinks && (
+                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
+                    {/* animated underline */}
+                    <span className={`absolute bottom-0 left-0 h-0.5 bg-brand-blue transition-all duration-300 ${
+                      isActive(link.path) ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`} />
+                  </Link>
+
+                  {/* Dropdown Menu */}
+                  {link.subLinks && (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                      <div className="bg-white rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.15)] border border-slate-100 py-3 relative">
+                        {link.subLinks.map((subLink) => (
+                          <Link
+                            key={subLink.name}
+                            to={subLink.path}
+                            className="block px-6 py-2.5 text-sm font-medium text-slate-600 hover:text-brand-blue hover:bg-slate-50 transition-colors"
+                          >
+                            {subLink.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               ))}
             </nav>
 
@@ -156,17 +194,31 @@ export const Navbar: React.FC = () => {
         {/* Nav links */}
         <nav className="flex flex-col px-4 py-4 gap-1 flex-1 overflow-y-auto">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-bold transition-all ${
-                isActive(link.path)
-                  ? 'text-white bg-brand-blue'
-                  : 'text-slate-300 hover:text-white hover:bg-white/10'
-              }`}
-            >
-              {link.name}
-            </Link>
+            <div key={link.name} className="flex flex-col">
+              <Link
+                to={link.path}
+                className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-bold transition-all ${
+                  isActive(link.path)
+                    ? 'text-white bg-brand-blue'
+                    : 'text-slate-300 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                {link.name}
+              </Link>
+              {link.subLinks && (
+                <div className="flex flex-col pl-6 pr-2 mt-1 mb-2 gap-1 border-l-2 border-white/5 ml-4">
+                  {link.subLinks.map(sub => (
+                    <Link
+                      key={sub.name}
+                      to={sub.path}
+                      className="py-2.5 px-3 text-sm font-medium text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                    >
+                      {sub.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
