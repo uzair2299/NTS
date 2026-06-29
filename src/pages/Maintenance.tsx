@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Wrench, Home, Building, Building2, Briefcase, 
-  Settings, AlertTriangle, Calendar, CheckCircle2, 
-  ArrowRight, Phone, MessageCircle, Star, Plus, Minus,
-  ShieldCheck, Clock, Check, Factory, Store, 
+import {
+  Wrench, Home, Building, Building2, Briefcase,
+  Settings, AlertTriangle, Calendar, CheckCircle2,
+  ArrowRight, MessageCircle, Star, Plus, Minus,
+  ShieldCheck, Clock, Check, Factory, Store,
   Utensils, Warehouse, GraduationCap, HeartPulse, MapPin
 } from 'lucide-react';
 
@@ -73,8 +73,8 @@ const processSteps = [
 ];
 
 const reasons = [
-  'Certified Technicians', 'Affordable Pricing', 'Transparent Quotes', 
-  'Fast Response', 'Emergency Support', 'Quality Workmanship', 
+  'Certified Technicians', 'Affordable Pricing', 'Transparent Quotes',
+  'Fast Response', 'Emergency Support', 'Quality Workmanship',
   'Modern Equipment', 'Satisfaction Guaranteed', 'Licensed & Insured', 'Flexible Maintenance Packages'
 ];
 
@@ -101,18 +101,18 @@ export const Maintenance: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full bg-white">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative pt-24 pb-20 md:pt-32 md:pb-32 bg-brand-dark overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">
-          <img 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" 
-            alt="Premium Villa Maintenance" 
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80"
+            alt="Premium Villa Maintenance"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/40" />
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6 max-w-4xl">
             Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">Home & Property Maintenance</span> Services in UAE
@@ -157,10 +157,10 @@ export const Maintenance: React.FC = () => {
               return (
                 <div key={idx} className="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden flex flex-col">
                   <div className="w-full h-48 relative overflow-hidden">
-                    <img 
-                      src={srv.image} 
-                      alt={srv.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                    <img
+                      src={srv.image}
+                      alt={srv.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 right-4 w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-blue shadow-lg group-hover:bg-brand-blue group-hover:text-white transition-colors">
                       <Icon className="w-6 h-6" />
@@ -209,7 +209,7 @@ export const Maintenance: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">Maintenance Packages ⭐</h2>
             <p className="text-lg text-slate-600">Choose the right Annual Maintenance Contract (AMC) for your property.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {packages.map((pkg, idx) => (
               <div key={idx} className={`relative bg-white rounded-3xl border p-8 flex flex-col ${pkg.popular ? 'border-brand-blue shadow-2xl scale-105 z-10' : 'border-slate-200 shadow-md'}`}>
@@ -267,16 +267,16 @@ export const Maintenance: React.FC = () => {
             <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2">Our Maintenance Process</h2>
             <p className="text-sm text-slate-400">A simple, transparent approach to property care.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {processSteps.map((step, idx) => (
               <div key={idx} className="group p-3.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-brand-blue/50 transition-all duration-300 flex items-center gap-3">
-                
+
                 {/* Modern Badged Number */}
                 <div className="w-9 h-9 shrink-0 bg-gradient-to-br from-brand-orange to-orange-600 rounded-lg flex items-center justify-center text-white text-sm font-extrabold shadow-sm group-hover:scale-105 transition-transform duration-300">
                   {step.step}
                 </div>
-                
+
                 <div className="flex-1">
                   <h3 className="text-[14px] font-bold text-white leading-tight">{step.title}</h3>
                   <p className="text-slate-400 text-[11px] leading-tight mt-1 line-clamp-2">
@@ -349,7 +349,7 @@ export const Maintenance: React.FC = () => {
                     <Plus className="w-5 h-5 text-slate-400 shrink-0" />
                   )}
                 </button>
-                <div 
+                <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaq === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                   <p className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-slate-50 pt-4">

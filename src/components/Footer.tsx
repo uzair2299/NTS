@@ -29,11 +29,8 @@ export const Footer: React.FC = () => {
               Dubai's premium residential and commercial technical maintenance provider. First-time-right assurance for AC, plumbing, electrical, painting, and remodeling work.
             </p>
             <div className="flex items-center gap-3">
-              <span className="text-xs font-semibold text-brand-green bg-brand-green/10 border border-brand-green/20 px-3 py-1.5 rounded-lg flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-ping"></span>
-                DEWA Approved
-              </span>
-              <span className="text-xs font-semibold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3 py-1.5 rounded-lg">
+              <span className="text-xs font-semibold text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3 py-1.5 rounded-lg flex items-center gap-1.5 relative overflow-hidden group">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-ping"></span>
                 24/7 Support
               </span>
             </div>
