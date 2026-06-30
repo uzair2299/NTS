@@ -167,7 +167,7 @@ export const companyDetails = {
   phone: "+971 55 512 0513",
   phoneSecondary: "+971 55 512 0513",
   email: "nts.experts@gmail.com",
-  address: "Barsha Valley Building, Al Barsha 1, Dubai, UAE",
+  address: "WAREHOUSE # 31, LEADER CAMP 1 DIP 1 DUBAI",
   workingHours: "24/7 Emergency Service (Office: 8:00 AM - 7:00 PM)",
   whatsapp: "https://wa.me/971555120513"
 };

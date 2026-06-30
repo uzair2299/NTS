@@ -56,6 +56,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/careers" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
+                  Careers at NTS
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="hover:text-white hover:translate-x-1 inline-block transition-all duration-200">
                   Contact & Location
                 </Link>
@@ -142,13 +147,13 @@ export const Footer: React.FC = () => {
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p>© {currentYear} {companyDetails.name}. All Rights Reserved. Redesigned with conversion optimization.</p>
           <div className="flex items-center gap-6">
-            <Link to="/contact" className="hover:text-white transition-colors">
+            <Link to="/support" className="hover:text-white transition-colors">
               Support Center
             </Link>
-            <Link to="/contact" className="hover:text-white transition-colors">
+            <Link to="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/contact" className="hover:text-white transition-colors">
+            <Link to="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
           </div>
