@@ -34,7 +34,7 @@ export const Contact: React.FC = () => {
               </h1>
               <p className="text-slate-400 text-base leading-relaxed max-w-lg">
                 Get in touch with Network Technical Services Experts (NTS) today.
-                We are available 24/7 for emergency plumbing &amp; AC repairs.
+                We provide Always-On Urgent Assistance for plumbing &amp; AC repairs.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
@@ -60,8 +60,8 @@ export const Contact: React.FC = () => {
               {[
                 { icon: Phone, label: 'Call Hotline', value: companyDetails.phone, sub: companyDetails.phoneSecondary, href: `tel:${companyDetails.phone.replace(/\s+/g, '')}`, color: 'text-brand-blue' },
                 { icon: Mail, label: 'Email Us', value: companyDetails.email, sub: 'General & contracts', href: `mailto:${companyDetails.email}`, color: 'text-brand-blue' },
-                { icon: MapPin, label: 'Office', value: companyDetails.address, sub: 'Al Barsha 1, Dubai', href: '#map', color: 'text-brand-blue' },
-                { icon: Clock, label: 'Working Hours', value: '24/7 Emergency', sub: 'Office: 8AM – 7PM', href: '#', color: 'text-brand-blue' },
+                { icon: MapPin, label: 'Office', value: companyDetails.address, sub: 'DIP 1, Dubai', href: '#map', color: 'text-brand-blue' },
+                { icon: Clock, label: 'Support', value: '24/7 Customer Support', sub: 'and Service', href: '#', color: 'text-brand-blue' },
               ].map((card, i) => {
                 const Icon = card.icon;
                 return (
@@ -106,7 +106,7 @@ export const Contact: React.FC = () => {
               {/* Google Maps */}
               <div id="map" className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 h-64 md:h-80">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14445.89240465494!2d55.1979929871582!3d25.11973499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bc063f114fb%3A0xe5a7acba16d90cf1!2sAl%20Barsha%201%20-%20Dubai!5e0!3m2!1sen!2sae!4v1718640000000!5m2!1sen!2sae"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.916843058866!2d55.1952671752163!3d25.074697937083046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f128e46975a55%3A0x6b7782b68266205e!2sDubai%20Investment%20Park%201%20-%20Dubai!5e0!3m2!1sen!2sae!4v1719848400000!5m2!1sen!2sae"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

@@ -18,7 +18,7 @@ export const Home: React.FC = () => {
     { value: '4,938+', label: 'Jobs Completed' },
     { value: '8+', label: 'Years Experience' },
     { value: '4.9★', label: 'Customer Rating' },
-    { value: '24/7', label: 'Emergency Support' },
+    { value: 'Always-On', label: 'Urgent Assistance' },
   ];
 
 
@@ -636,7 +636,7 @@ export const Home: React.FC = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-brand-blue/10 border border-brand-blue/30 text-brand-blue text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse" />
-            24/7 Emergency Support
+            Always-On Urgent Assistance
           </div>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">

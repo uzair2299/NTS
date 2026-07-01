@@ -20,7 +20,7 @@ export const About: React.FC = () => {
     { value: '4,938+', label: 'Jobs Completed' },
     { value: '8+', label: 'Years Experience' },
     { value: '4.9★', label: 'Customer Rating' },
-    { value: '24/7', label: 'Emergency Support' },
+    { value: 'Always-On', label: 'Urgent Assistance' },
   ];
 
   const values = [
@@ -245,7 +245,7 @@ export const About: React.FC = () => {
               { icon: Users, label: '111+ Team Members', sub: 'Certified professionals' },
               { icon: Award, label: 'DEWA Compliant', sub: 'Licensed & insured' },
               { icon: ShieldCheck, label: '100% Guaranteed', sub: 'First-time-right service' },
-              { icon: Phone, label: '24/7 Emergency', sub: '30-min response time' },
+              { icon: Phone, label: 'Always-On Urgent Assistance', sub: '30-min response time' },
             ].map((item, i) => {
               const Icon = item.icon;
               return (

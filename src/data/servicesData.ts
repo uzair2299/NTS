@@ -32,7 +32,7 @@ export const servicesData: ServiceDetail[] = [
       "Full unit installation & package system relocation"
     ],
     pricing: "From 150 AED",
-    highlights: ["24/7 emergency repair", "Certified HVAC technicians", "Genuine parts with warranty", "Prompt 30-min response"]
+    highlights: ["Always-On Urgent Assistance", "Certified HVAC technicians", "Genuine parts with warranty", "Prompt 30-min response"]
   },
   {
     title: "Plumbing Services",
@@ -168,6 +168,6 @@ export const companyDetails = {
   phoneSecondary: "+971 55 512 0513",
   email: "nts.experts@gmail.com",
   address: "WAREHOUSE # 31, LEADER CAMP 1 DIP 1 DUBAI",
-  workingHours: "24/7 Emergency Service (Office: 8:00 AM - 7:00 PM)",
+  workingHours: "24/7 Customer Support and Service",
   whatsapp: "https://wa.me/971555120513"
 };
