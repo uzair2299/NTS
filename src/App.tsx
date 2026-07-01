@@ -8,6 +8,10 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Maintenance from './pages/Maintenance';
 import Renovation from './pages/Renovation';
+import Careers from './pages/Careers';
+import SupportCenter from './pages/SupportCenter';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 // Scroll to top helper on route change (except for hash targets)
 const ScrollToTop = () => {
@@ -38,6 +42,10 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/services/maintenance" element={<Maintenance />} />
             <Route path="/services/renovation" element={<Renovation />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/support" element={<SupportCenter />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

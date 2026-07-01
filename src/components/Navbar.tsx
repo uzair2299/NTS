@@ -41,6 +41,7 @@ export const Navbar: React.FC = () => {
         { name: 'Outdoor & Landscaping Services', path: '/services#landscaping' }
       ]
     },
+    { name: 'Careers', path: '/careers' },
     { name: 'Contact', path: '/contact' },
   ];
 
