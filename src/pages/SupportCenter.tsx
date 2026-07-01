@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Mail, Phone, MapPin, LifeBuoy } from 'lucide-react';
+import { Mail, Phone, LifeBuoy } from 'lucide-react';
 import { companyDetails } from '../data/servicesData';
 
 export const SupportCenter: React.FC = () => {
