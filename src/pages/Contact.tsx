@@ -106,7 +106,7 @@ export const Contact: React.FC = () => {
               {/* Google Maps */}
               <div id="map" className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 h-64 md:h-80">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.916843058866!2d55.1952671752163!3d25.074697937083046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f128e46975a55%3A0x6b7782b68266205e!2sDubai%20Investment%20Park%201%20-%20Dubai!5e0!3m2!1sen!2sae!4v1719848400000!5m2!1sen!2sae"
+                  src="https://maps.google.com/maps?q=WAREHOUSE%20%23%2031%2C%20LEADER%20CAMP%201%20DIP%201%20DUBAI&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
